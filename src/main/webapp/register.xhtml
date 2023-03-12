@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml">
+    <ui:define name="contenido">
+
+        <body class="text-center">
+
+        <main class="form-signin w-100 m-auto">
+            <form>
+                <img class="mb-4" src="imagenes/logo.jpeg" alt="" width="72" height="57"/>
+                <h1 class="h3 mb-3 fw-normal">Regístrate</h1>
+
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="firstName" placeholder="Nombre" value="" required/>
+                    <div class="invalid-feedback">
+                        Es necesario poner nombre.
+                    </div>
+                    <label for="floatingInput">Nombre</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="lastName" placeholder="Apellidos" value="" required/>
+                    <div class="invalid-feedback">
+                        Es necesario poner apellidos.
+                    </div>
+                    <label for="floatingInput">Apellidos</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="address" placeholder="Ditrcción" required>
+                    <div class="invalid-feedback">
+                        Es necesaria la dirección.
+                    </div>
+                    <label for="floatingInput">Dirección</label>
+                </div>
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="nombre@example.com" required>
+                    <div class="invalid-feedback">
+                        Es necesario el correo.
+                    </div>
+                    <label for="floatingInput">Correo Electrónico</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" required>
+                    <div class="invalid-feedback">
+                        Es necesaria la contraseña.
+                    </div>
+                    <label for="floatingPassword">Contraseña</label>
+                </div>
+
+
+
+
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar Sesión</button>
+
+            </form>
+        </main>
+        </body>
+
+    </ui:define>
+</ui:composition>
+</html>
