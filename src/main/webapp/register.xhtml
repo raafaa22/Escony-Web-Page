@@ -4,7 +4,7 @@
       xmlns:h="jakarta.faces.html"
       xmlns:ui="jakarta.faces.facelets"
       xmlns:f="http://java.sun.com/jsf/core">
-<ui:composition template="/WEB-INF/templates/plantilla.xhtml">
+<ui:composition template="/WEB-INF/template/plantilla.xhtml">
     <ui:define name="contenido">
 
         <body class="text-center">
@@ -13,52 +13,77 @@
             <form>
                 <img class="mb-4" src="imagenes/logo.jpeg" alt="" width="72" height="57"/>
                 <h1 class="h3 mb-3 fw-normal">Regístrate</h1>
+                <div class="form-floating">
+
+                    <label>Nombre:</label> <h:inputText styleClass="form-control" label="Nombre" id="idNombre"
+                                                           value="#{clienteCtrl.cliente.Nombre}" required="true">
+                    <!--f:validateLength minimum="4" maximum="25"/-->
+                </h:inputText>
+                    <input type="text" class="form-control" id="Nombre" placeholder="Nombre" required=""/>
+                    <div class="invalid-feedback">
+                    </div>
+                    <p><h:message styleClass="form-text text-danger" for="idNombre"  /></p>
+                </div>
 
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="firstName" placeholder="Nombre" value="" required=""/>
+
+                    <label>Apellidos:</label> <h:inputText styleClass="form-control" label="Apellidos" id="idApellidos"
+                                                           value="#{clienteCtrl.cliente.Apellidos}" required="true">
+                    <!--f:validateLength minimum="4" maximum="25"/-->
+                </h:inputText>
+                    <input type="text" class="form-control" id="address" placeholder="Apellidos" required=""/>
                     <div class="invalid-feedback">
-                        Es necesario poner nombre.
+
                     </div>
-                    <label for="floatingInput">Nombre</label>
+                    <p><h:message styleClass="form-text text-danger" for="idApellidos"  /></p>
                 </div>
+
+
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="lastName" placeholder="Apellidos" value="" required=""/>
+
+                    <label>Direccion:</label> <h:inputText styleClass="form-control" label="Direccion" id="idDireccion"
+                                                           value="#{clienteCtrl.cliente.Direccion}" required="true">
+                    <!--f:validateLength minimum="4" maximum="25"/-->
+                </h:inputText>
+                    <input type="text" class="form-control" id="test" placeholder="Dirección" required=""/>
                     <div class="invalid-feedback">
-                        Es necesario poner apellidos.
+
                     </div>
-                    <label for="floatingInput">Apellidos</label>
+                    <p><h:message styleClass="form-text text-danger" for="idDireccion"  /></p>
                 </div>
+
+
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="address" placeholder="Ditrcción" required=""/>
-                    <div class="invalid-feedback">
-                        Es necesaria la dirección.
-                    </div>
-                    <label for="floatingInput">Dirección</label>
-                </div>
-                <div class="form-floating">
+                    <label for="floatingInput">Correo Electrónico</label>
                     <input type="email" class="form-control" id="floatingInput" placeholder="nombre@example.com" required=""/>
                     <div class="invalid-feedback">
-                        Es necesario el correo.
                     </div>
-                    <label for="floatingInput">Correo Electrónico</label>
+                    <h:inputText styleClass="form-control" label="Email" id="idEmail"
+                                                        value="#{clienteCtrl.cliente.Email}" required="true">
+                    <!--f:validateLength minimum="4" maximum="25"/-->
+                </h:inputText>
+                    <p><h:message styleClass="form-text text-danger" for="idNombre"  /></p>
+
                 </div>
+
+
                 <div class="form-floating">
+                    <label for="floatingPassword">Contraseña</label>
                     <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" required=""/>
                     <div class="invalid-feedback">
-                        Es necesaria la contraseña.
+
                     </div>
-                    <label for="floatingPassword">Contraseña</label>
+                    <h:inputText styleClass="form-control" label="Contraseña" id="idcontraseña"
+                                 value="#{clienteCtrl.cliente.Contraseña}" required="true">
+                    </h:inputText>
+
                 </div>
-
-
-
 
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar Sesión</button>
 
             </form>
         </main>
         </body>
-
     </ui:define>
 </ui:composition>
 </html>
