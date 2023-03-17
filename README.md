@@ -8,6 +8,8 @@ Rafael Serrano Algar
 
 Lydia Muñoz Gallardo
 
+Enlace de GitLab https://gitlab.ujaen.es/DAW/2223/proyecto213/Escony
+
 ## Diagrama entidad/relación
 Atributos marcados con * son la clave.
 **R1: tiene**

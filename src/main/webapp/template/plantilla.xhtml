@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="jakarta.faces.html"
-      xmlns:ui="jakarta.faces.facelets"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ui="http://java.sun.com/jsf/facelets">
 
 
 
@@ -87,6 +87,7 @@
                     <div class="col-sm-8 col-md-7 py-4">
                         <h4 class="text-white">Sobre nosotros:</h4>
                         <p class="text-muted">Ponemos algo sobre nosotros.</p>
+
                     </div>
                 </div>
             </div>
@@ -110,9 +111,13 @@
         </div>
     </header>
     <main>
-        <ui:insert name="contenido">
+        <div>
+            <p>Contenido</p>
+            <ui:insert name="contenido">
 
-        </ui:insert>
+            </ui:insert>
+
+        </div>
     </main>
     <footer class="text-muted py-5">
         <div class="container">

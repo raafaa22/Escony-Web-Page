@@ -15,17 +15,23 @@
 **Rafel Serrano:**  Ha añadido las imagenes a la pagina principal, a la seccion de hombre y a la seccion de mujer.
 
 # 19/02/23
-**Ambos :** Hemos corregido y  dado los ultimos detalles a los archivos html.
+**Ambos:** Hemos corregido y  dado los ultimos detalles a los archivos html.
 
 
 # 6/03/23
-**Ambos :** Hemos pasado todos los archivos a .xhtml.
+**Ambos:** Hemos pasado todos los archivos a .xhtml.
 
 # 9/03/23
-**Ambos :** Hemos intentado hacer la plantilla sin mucho exito ya que nos daba error.
+**Ambos:** Hemos intentado hacer la plantilla sin mucho exito ya que nos daba error.
 
 # 14/03/23
-**Lydia :** Ha hecho el controlador Cliente.
+**Lydia:** Ha hecho el controlador Cliente.
 
 # 1/03/23
-**Lydia :** Ha hecho el controlador ropa y ropaFav.
+**Lydia:** Ha hecho el controlador ropa y ropaFav.
+
+# 16/03/23
+**Rafa:** Intento de establecer una plantilla.
+
+# 17/03/23
+**Rafa:** Cambios en Readme y Changelog.
