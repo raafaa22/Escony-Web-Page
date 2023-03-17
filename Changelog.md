@@ -27,7 +27,7 @@
 # 14/03/23
 **Lydia:** Ha hecho el controlador Cliente.
 
-# 1/03/23
+# 16/03/23
 **Lydia:** Ha hecho el controlador ropa y ropaFav.
 
 # 16/03/23
