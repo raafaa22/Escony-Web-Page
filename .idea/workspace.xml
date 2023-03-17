@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4da8c993-df2e-4884-8d4c-a827f63aafaa" name="Changes" comment="changelog y readme" />
+    <list default="true" id="4da8c993-df2e-4884-8d4c-a827f63aafaa" name="Changes" comment="ultimos cambios" />
     <list id="3b80d914-311d-4c98-83ca-6253362eacc5" name="Changes by Rafa" comment="cambios plantilla" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,6 +164,7 @@
       <workItem from="1678966897463" duration="724000" />
       <workItem from="1678982425878" duration="4195000" />
       <workItem from="1679063810727" duration="1726000" />
+      <workItem from="1679065566572" duration="456000" />
     </task>
     <task id="LOCAL-00001" summary="primer commit">
       <created>1678651640506</created>
@@ -221,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678987318531</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="ultimos cambios">
+      <created>1679065615675</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1679065615675</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,7 +240,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="iteracion1" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -247,6 +267,7 @@
     <MESSAGE value="cambios plantilla" />
     <MESSAGE value="Controladores acabados" />
     <MESSAGE value="changelog y readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="changelog y readme" />
+    <MESSAGE value="ultimos cambios" />
+    <option name="LAST_COMMIT_MESSAGE" value="ultimos cambios" />
   </component>
 </project>
