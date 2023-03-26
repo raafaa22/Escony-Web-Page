@@ -1,6 +1,8 @@
 package com.example.escony.controller;
 import com.example.escony.model.RopaFavorita;
 import com.example.escony.model.dao.RopaFavDAO;
+
+import java.io.Serializable;
 import java.util.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +15,10 @@ import jakarta.inject.Named;
 @ViewScoped
 
 
-public class RopaFavController {
+public class RopaFavController implements Serializable{
     @Inject
     private RopaFavorita ropafav;
+    @Inject
     private RopaFavDAO ropaFavDAO;
     private Map<Integer, List<Integer>> ropaFavoritaMap;
 
@@ -62,7 +65,7 @@ public class RopaFavController {
     public void init() {
         ropafav = new RopaFavorita();
     }
-    public List<RopaFavorita> getRopaFav() {
+    public List<RopaFavorita> getPrendasFav() {
         return ropaFavDAO.buscaTodasFav();
     }
 

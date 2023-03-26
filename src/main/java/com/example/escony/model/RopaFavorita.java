@@ -3,15 +3,21 @@ import java.io.Serializable;
 public class RopaFavorita {
 
         private String emailUsu;
-        private String idRopa;
+        private Integer idRopa;
 
-        public RopaFavorita() {
+        public RopaFavorita(){
+            emailUsu="";
+            idRopa=0;
+        }
+
+        public RopaFavorita(String emailUsu,Integer idRopa) {
             this.emailUsu = emailUsu;
             this.idRopa = idRopa;
         }
 
     public RopaFavorita(RopaFavorita rf) {
-
+        this.emailUsu =rf.emailUsu;
+        this.idRopa =rf.idRopa;
     }
 
     public String getIdUsuario() {
@@ -22,11 +28,11 @@ public class RopaFavorita {
             this.emailUsu = idUsuario;
         }
 
-        public String getIdRopa() {
+        public Integer getIdRopa() {
             return idRopa;
         }
 
-        public void setIdRopa(String idRopa) {
+        public void setIdRopa(Integer idRopa) {
             this.idRopa = idRopa;
         }
 }

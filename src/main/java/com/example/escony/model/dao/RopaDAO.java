@@ -51,7 +51,6 @@ public class RopaDAO{
         }
         return result;
     }
-
     public List<Ropa> buscaTodos() {
         return ropa.values().stream().collect(Collectors.toList());
     }

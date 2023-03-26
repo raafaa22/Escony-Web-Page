@@ -1,8 +1,10 @@
 package com.example.escony.controller;
 
+import com.example.escony.model.Cliente;
 import com.example.escony.model.Ropa;
 import com.example.escony.model.dao.RopaDAO;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -17,9 +19,10 @@ import java.util.logging.Logger;
 @ViewScoped
 
 
-public class RopaController {
+public class RopaController implements Serializable{
     @Inject
     private Ropa ropa;
+    @Inject
     private RopaDAO ropaDAO;
     private List<Ropa> ropaList;
     private final Logger logger = Logger.getLogger(RopaDAO.class.getName());

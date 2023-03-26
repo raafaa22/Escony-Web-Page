@@ -10,12 +10,13 @@ import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Logger;
 
 @Named(value = "clienteCtrl")
 @ViewScoped
-public class ClienteController {
+public class ClienteController implements Serializable{
     private static final long serialVersionUID = 1L;
 
     private final Logger logger = Logger.getLogger(ClienteController.class.getName());
@@ -29,6 +30,7 @@ public class ClienteController {
     FacesContext fc;
 
     //View-Model
+    @Inject
     private Cliente cliente;
 
     public ClienteController() {

@@ -13,7 +13,7 @@ public class RopaFavDAO {
     public RopaFavDAO() {
         if (ropafav == null) {
             ropafav = new HashMap<>();
-            ropafav.put("rafa@email.com", new RopaFavorita());
+            ropafav.put("rafa@email.com", new RopaFavorita("rafa@email.com",123));
         }
     }
     public RopaFavorita buscaEmail(String email) {
@@ -28,16 +28,16 @@ public class RopaFavDAO {
 
     public boolean crearopafav(RopaFavorita rf) {
         RopaFavorita nrf=new RopaFavorita(rf);
-        ropafav.put(rf.getIdUsuario(), nrf);
+        ropafav.put(nrf.getIdUsuario(), nrf);
         return true;
     }
 
 
     public boolean guardaRopaFav(RopaFavorita rf) {
         boolean result=false;
-        if (ropafav.containsKey(rf.getIdRopa())) {
+        if (ropafav.containsKey(rf.getIdUsuario())) {
             RopaFavorita nrf=new RopaFavorita(rf);
-            ropafav.replace(rf.getIdRopa(),nrf);
+            ropafav.replace(nrf.getIdUsuario(),nrf);
             result=true;
         }
         return result;
