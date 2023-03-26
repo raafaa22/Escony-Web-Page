@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: Lydia
+  Date: 25/03/2023
+  Time: 17:24
+-->
+
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:h="jakarta.faces.html"
+      xmlns:ui="jakarta.faces.facelets">
+>
+
+<h:head>
+    <title>Ropa</title>
+</h:head>
+
+<h:body>
+
+        <h1>Catálogo ropa</h1>
+        <ul>
+            <ui:repeat var="r" value="#{ctrlRopa.ropaList}">
+                <li><b>#{r.nombre}</b> #{r.precio}#{r.talla}</li>
+            </ui:repeat>
+        </ul>
+</h:body>
+
+</html>

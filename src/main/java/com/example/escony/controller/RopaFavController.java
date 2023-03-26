@@ -1,8 +1,22 @@
 package com.example.escony.controller;
-
+import com.example.escony.model.RopaFavorita;
+import com.example.escony.model.dao.RopaFavDAO;
 import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.faces.view.ViewScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
+@Named("ctrlRopafav")
+@ViewScoped
+
 
 public class RopaFavController {
+    @Inject
+    private RopaFavorita ropafav;
+    private RopaFavDAO ropaFavDAO;
     private Map<Integer, List<Integer>> ropaFavoritaMap;
 
     public RopaFavController() {
@@ -42,5 +56,17 @@ public class RopaFavController {
         } else {
             return new ArrayList<>();
         }
+    }
+
+    @PostConstruct
+    public void init() {
+        ropafav = new RopaFavorita();
+    }
+    public List<RopaFavorita> getRopaFav() {
+        return ropaFavDAO.buscaTodasFav();
+    }
+
+    public RopaFavorita getRopafav() {
+        return ropafav;
     }
 }

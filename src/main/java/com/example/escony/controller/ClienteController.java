@@ -36,19 +36,12 @@ public class ClienteController {
 
     @PostConstruct
     public void init() {
-        //init  model-view
+
         cliente = new Cliente();
     }
-
-    //MODEL-VIEW access methods (controller bean properties)
-
     public List<Cliente> getClientes() {
         return clienteDAO.buscaTodos();
     }
-//Modificacion of property from view not needed
-//    public void setClientes (List<Cliente> lc) {
-//        this.lc=lc;
-//    }
 
     public Cliente getCliente() {
         return cliente;

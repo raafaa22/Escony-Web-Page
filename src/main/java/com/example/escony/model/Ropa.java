@@ -1,6 +1,5 @@
 package com.example.escony.model;
-
-public class Ropa {
+public class Ropa{
     private String nombre;
     private String talla;
     private double precio;
