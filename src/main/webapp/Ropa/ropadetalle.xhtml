@@ -5,18 +5,28 @@
   Date: 25/03/2023
   Time: 17:47
 -->
-<!DOCTYPE html
-        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:h="jakarta.faces.html"
-      xmlns:ui="jakarta.faces.facelets">
+<ui:composition
+        xmlns:h="jakarta.faces.html"
+        xmlns:f="jakarta.faces.core"
+        xmlns:ui="jakarta.faces.facelets"
+        xmlns:p="jakarta.faces.passthrough"
+        template="/WEB-INF/template/plantilla.xhtml">
+<ui:define name="metadata">
 
-<h:head>
-    <title>Detalles ropa</title>
-</h:head>
+    <title>Detalles</title>
+   <f:metadata>
+        <f:viewParam name="id" required="true"
+                     value="#{ ctrlRopa.ropa.id }"/>
+        <f:viewAction action="#{ ctrlRopa.recupera() }"/>
+    </f:metadata>
+    <ui:repeat var="r" value="#{ctrlRopa.ropa}">
+        <li><b>#{r.id}</b> #{r.nombre}
+            <h:link value="Mostrar" outcome="detalle">
+                <f:param name="id" value="${r.id}"/>
+            </h:link>
+        </li>
+    </ui:repeat>
 
 <h:body>
     <h1>Detalle del ropa</h1>

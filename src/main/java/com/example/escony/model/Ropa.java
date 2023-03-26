@@ -1,4 +1,5 @@
 package com.example.escony.model;
+import com.example.escony.model.dao.RopaDAO;
 public class Ropa{
     private String nombre;
     private String talla;
@@ -49,6 +50,7 @@ public class Ropa{
     public Double getPrecio() {
         return precio;
     }
+
 
     public void setPrecio(Double precio) {
         this.precio = precio;

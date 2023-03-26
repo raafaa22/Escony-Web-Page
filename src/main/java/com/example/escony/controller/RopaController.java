@@ -5,7 +5,7 @@ import com.example.escony.model.dao.RopaDAO;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.logging.Logger;
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
@@ -22,6 +22,8 @@ public class RopaController {
     private Ropa ropa;
     private RopaDAO ropaDAO;
     private List<Ropa> ropaList;
+    private final Logger logger = Logger.getLogger(RopaDAO.class.getName());
+
 
     public RopaController() {
         this.ropaList = new ArrayList<>();
@@ -41,6 +43,15 @@ public class RopaController {
 
     public List<Ropa> getRopaList() {
         return ropaList;
+    }
+    public void recupera() {
+        logger.info("Recuperando articulo "+ropa.getId());
+        ropa = ropaDAO. buscaId( ropa.getId());
+    }
+    public String crea() {
+        ropa.setId(0);
+        ropaDAO.crea(ropa);
+        return "ropaalta?faces-redirect=true&id=" + ropa.getId();
     }
 
     @PostConstruct

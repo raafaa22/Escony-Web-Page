@@ -4,7 +4,9 @@ package com.example.escony.model.dao;
 import com.example.escony.model.Cliente;
 import com.example.escony.model.Ropa;
 import com.example.escony.model.RopaFavorita;
-
+import jakarta.persistence.EntityManager;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +15,8 @@ import java.util.stream.Collectors;
 public class RopaDAO{
     private Map<Integer, Ropa> ropa =null;
     private  Integer id = 1;
+    private final Logger logger = Logger.getLogger(RopaDAO.class.getName());
+    private EntityManager em;
     public RopaDAO() {
         if (ropa == null) {
             ropa = new HashMap<>();
@@ -50,6 +54,17 @@ public class RopaDAO{
 
     public List<Ropa> buscaTodos() {
         return ropa.values().stream().collect(Collectors.toList());
+    }
+
+    public Ropa buscaId(Integer id) {
+       Ropa r=null;
+        try {
+            r=em.find(Ropa.class, id);
+        } catch (Exception ex) {
+            logger.log(Level.SEVERE, ex.getMessage(), ex);
+
+        }
+        return r;
     }
 }
 

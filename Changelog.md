@@ -35,3 +35,11 @@
 
 # 17/03/23
 **Rafa:** Cambios en Readme y Changelog.
+
+# 25/03/23
+**Ambos:** Avanzamos en la practica e hicimos todo lo que dice el guion de la practica 4. 
+Ademas rehicimos los controladores porque habia partes mal.
+
+# 26/03/23
+**Ambos:** Hemos intentado corregir errores, sin mucho exito. Hemos avanzado 
+con el giuion de la practica 5. Hemos actualizamo el Changelog.

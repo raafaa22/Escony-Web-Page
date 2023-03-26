@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: Lydia
+  Date: 26/03/2023
+  Time: 19:33
+-->
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:h="jakarta.faces.html"
+      xmlns:pt="jakarta.faces.passthrough">
+
+<h:head>
+    <title>Ropa</title>
+</h:head>
+<h1>Alta de Ropa</h1>
+<h:form>
+    <h:inputText id="id" value="#{ctrlRopa.ropa.id}"
+                 pt:placeholder="ID" />
+    <h:inputText id="nombre" value="#{ctrlRopa.ropa.nombre}"
+                 pt:placeholder="nombre" />
+    <h:commandButton action="#{ctrlRopa.crea()}" value="Alta" />
+</h:form>
+<h:body>
+
+</h:body>
+
+</html>

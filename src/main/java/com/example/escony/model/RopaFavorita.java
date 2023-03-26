@@ -1,6 +1,6 @@
 package com.example.escony.model;
 import java.io.Serializable;
-public class RopaFavorita implements Serializable{
+public class RopaFavorita {
 
         private String emailUsu;
         private String idRopa;
@@ -15,8 +15,8 @@ public class RopaFavorita implements Serializable{
     }
 
     public String getIdUsuario() {
-            return emailUsu;
-        }
+        return emailUsu;
+    }
 
         public void setIdUsuario( String idUsuario) {
             this.emailUsu = idUsuario;
@@ -29,7 +29,7 @@ public class RopaFavorita implements Serializable{
         public void setIdRopa(String idRopa) {
             this.idRopa = idRopa;
         }
-    }
+}
 
 
 
