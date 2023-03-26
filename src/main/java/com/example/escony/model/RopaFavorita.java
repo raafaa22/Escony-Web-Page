@@ -2,11 +2,11 @@ package com.example.escony.model;
 import java.io.Serializable;
 public class RopaFavorita implements Serializable{
 
-        private Cliente idUsuario;
-        private Ropa idRopa;
+        private String emailUsu;
+        private String idRopa;
 
-        public RopaFavorita(Cliente idUsuario, Ropa idRopa) {
-            this.idUsuario = idUsuario;
+        public RopaFavorita() {
+            this.emailUsu = emailUsu;
             this.idRopa = idRopa;
         }
 
@@ -14,12 +14,12 @@ public class RopaFavorita implements Serializable{
 
     }
 
-        public Cliente getIdUsuario() {
-            return idUsuario;
+    public String getIdUsuario() {
+            return emailUsu;
         }
 
-        public void setIdUsuario(Cliente idUsuario) {
-            this.idUsuario = idUsuario;
+        public void setIdUsuario( String idUsuario) {
+            this.emailUsu = idUsuario;
         }
 
         public String getIdRopa() {

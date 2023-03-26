@@ -2,12 +2,32 @@ package com.example.escony.model;
 public class Ropa{
     private String nombre;
     private String talla;
-    private double precio;
+    private Double precio;
+    private Integer id;
 
-    public Ropa(String nombre, String talla, double precio) {
+    public Ropa(String nombre, String talla, Double precio,Integer id) {
         this.nombre = nombre;
         this.talla = talla;
         this.precio = precio;
+        this.id=id;
+    }
+    public Ropa(Ropa ropa){
+        this.nombre = ropa.nombre;
+        this.talla = ropa.talla;
+        this.precio = ropa.precio;
+        this.id=ropa.id;
+    }
+    public Ropa(){
+
+    }
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -26,11 +46,11 @@ public class Ropa{
         this.talla = talla;
     }
 
-    public double getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
 }

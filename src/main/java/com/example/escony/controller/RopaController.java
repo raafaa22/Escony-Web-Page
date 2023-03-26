@@ -1,6 +1,7 @@
 package com.example.escony.controller;
 
 import com.example.escony.model.Ropa;
+import com.example.escony.model.dao.RopaDAO;
 
 import java.util.ArrayList;
 import java.util.List;

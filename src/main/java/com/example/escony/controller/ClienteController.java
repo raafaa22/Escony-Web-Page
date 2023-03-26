@@ -9,7 +9,7 @@ import jakarta.faces.context.FacesContext;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import com.example.escony.qualifiers.DAOMap;
+
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -22,7 +22,7 @@ public class ClienteController {
 
     //Business logic
     //@Inject @DAOJpa   //JPA DAO implementation
-    @Inject @DAOMap     //Inject DAO Map testing implementation
+    @Inject      //Inject DAO Map testing implementation
     private ClienteDAO clienteDAO;
 
     @Inject
@@ -52,7 +52,7 @@ public class ClienteController {
      * Get client from id param
      */
     public void recupera() {
-        cliente = clienteDAO.buscaId(cliente.getId());
+        cliente = clienteDAO.buscaEmail(cliente.getEmail());
         if (cliente == null) {
             fc.addMessage(null, new FacesMessage("El cliente indicado no existe"));
         }
@@ -62,10 +62,10 @@ public class ClienteController {
      * Create a new Client from model data
      */
     public String crea() {
-        cliente.setId(0);
-        clienteDAO.crea(cliente);
+        cliente.setEmail("");
+        clienteDAO.creaCliente(cliente);
         //Post-Redirect-Get
-        return "visualiza?faces-redirect=true&id=" + cliente.getId();
+        return "visualiza?faces-redirect=true&id=" + cliente.getEmail();
     }
 
     /**
@@ -77,21 +77,21 @@ public class ClienteController {
 //            fc.addMessage("formCliente:idDNI", new FacesMessage("La letra no coincide con el DNI"));
 //            return ""; //Stay on view to correct error
 //        }
-        clienteDAO.guarda(cliente);
-        return "visualiza?faces-redirect=true&id=" + cliente.getId();
+        clienteDAO.guardaCliente(cliente);
+        return "visualiza?faces-redirect=true&id=" + cliente.getEmail();
     }
 
     /**
      * Delete current model data client
      */
     public String borra() {
-        clienteDAO.borra(cliente.getId());
+        clienteDAO.borraCliente(cliente.getEmail());
         return "listado";
     }
 
     //ACTIONS for listado.xhtml view
     public String borra(Cliente cliente) {
-        clienteDAO.borra(cliente.getId());
+        clienteDAO.borraCliente(cliente.getEmail());
         return "listado";
     }
 
@@ -117,30 +117,9 @@ public class ClienteController {
      */
     public void actualizaCliente() {
 
-        clienteDAO.guarda(cliente);
+        clienteDAO.guardaCliente(cliente);
 
         cancelEditRow();
     }
-
-    //VALIDADORES Faces. Using Bean Validation instead
-//    public void validaNombre(FacesContext context, UIComponent inputNombre,
-//                                Object value) {
-//        String nombre=(String)value;
-//        if (nombre.length()<4 || nombre.length()>25) {
-//            FacesMessage message = new FacesMessage("La longitud del nombre debe estar entre 4 y 25");
-//            throw new ValidatorException(message);
-//
-//        }
-//    }
-//
-//    public void validaDni(FacesContext context, UIComponent inputDni,
-//                                Object value) {
-//        String dni=(String)value;
-//        if (!dni.matches("\\d{7,8}-?[a-zA-Z]")) {
-//            FacesMessage message = new FacesMessage("El dni no tiene el formato 12345678-A");
-//            throw new ValidatorException(message);
-//
-//        }
-//    }
 
 }
