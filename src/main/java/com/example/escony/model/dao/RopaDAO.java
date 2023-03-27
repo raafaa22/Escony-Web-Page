@@ -4,6 +4,7 @@ package com.example.escony.model.dao;
 import com.example.escony.model.Cliente;
 import com.example.escony.model.Ropa;
 import com.example.escony.model.RopaFavorita;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.EntityManager;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+@ApplicationScoped
 public class RopaDAO{
     private Map<Integer, Ropa> ropa =null;
     private  Integer id = 1;

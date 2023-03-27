@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 
 
 public class RopaController implements Serializable{
-    @Inject
+
     private Ropa ropa;
     @Inject
     private RopaDAO ropaDAO;
@@ -53,7 +53,7 @@ public class RopaController implements Serializable{
     }
     public String crea() {
         ropa.setId(0);
-        ropaDAO.crea(ropa);
+        ropaDAO.creaPrenda(ropa);
         return "ropaalta?faces-redirect=true&id=" + ropa.getId();
     }
 

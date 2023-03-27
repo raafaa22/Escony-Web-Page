@@ -30,7 +30,7 @@ public class ClienteController implements Serializable{
     FacesContext fc;
 
     //View-Model
-    @Inject
+
     private Cliente cliente;
 
     public ClienteController() {

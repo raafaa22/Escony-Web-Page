@@ -16,7 +16,7 @@ import jakarta.inject.Named;
 
 
 public class RopaFavController implements Serializable{
-    @Inject
+
     private RopaFavorita ropafav;
     @Inject
     private RopaFavDAO ropaFavDAO;
