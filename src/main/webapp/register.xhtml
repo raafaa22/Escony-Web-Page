@@ -13,6 +13,7 @@
         <body class="text-center">
 
         <main class="form-signin w-100 m-auto">
+            <h:messages/>
             <h:form>
                 <img class="mb-4" src="imagenes/logo.jpeg" alt="" width="72" height="57"/>
                 <h1 class="h3 mb-3 fw-normal">Regístrate</h1>
@@ -21,6 +22,7 @@
                     <h:inputText styleClass="form-control" label="Nombre" id="idNombre"
                                                         value="#{clienteCtrl.cliente.nombre}" required="true">
                     </h:inputText>
+                    <div><h:message for="idNombre" /></div>
                 </div>
 
                 <div class="form-floating">
@@ -28,6 +30,7 @@
                     <h:inputText styleClass="form-control" label="Direccion" id="idDireccion"
                                  value="#{clienteCtrl.cliente.direccion}" required="true">
                     </h:inputText>
+                    <div><h:message for="idDireccion" /></div>
                 </div>
 
 
@@ -38,13 +41,14 @@
                     <!--f:validateLength minimum="4" maximum="25"/-->
                 </h:inputText>
                     <p><h:message styleClass="form-text text-danger" for="idNombre"  /></p>
-
+                    <div><h:message for="idNombre" /></div>
                 </div>
                 <div class="form-floating">
                     <h3>Contraseña</h3>
                     <h:inputText styleClass="form-control" label="Contraseña" id="idcontraseña"
                                  value="#{clienteCtrl.cliente.password}" required="true">
                     </h:inputText>
+                    <div><h:message for="idcontraseña" /></div>
                 </div>
 
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Registrarse</button>

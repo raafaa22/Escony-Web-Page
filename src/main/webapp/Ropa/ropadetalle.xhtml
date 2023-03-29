@@ -11,10 +11,12 @@
         xmlns:f="jakarta.faces.core"
         xmlns:ui="jakarta.faces.facelets"
         xmlns:p="jakarta.faces.passthrough"
-        template="/WEB-INF/template/plantilla.xhtml">
+        template="/WEB-INF/template/plantilla.xhtml"
+        xmlns:daw="jakarta.faces.composite/daw">
 <ui:define name="metadata">
 
     <title>Detalles</title>
+
    <f:metadata>
         <f:viewParam name="id" required="true"
                      value="#{ ctrlRopa.ropa.id }"/>
@@ -30,8 +32,8 @@
 
 <h:body>
     <h1>Detalle del ropa</h1>
-
-        <div>
+<daw:ropa>
+    <div>
             <b>Nombre:</b> #{ctrlRopa.ropaList.nombre}
         </div>
         <div>

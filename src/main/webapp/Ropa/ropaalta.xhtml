@@ -15,12 +15,20 @@
 <h:head>
     <title>Ropa</title>
 </h:head>
-<h1>Alta de Ropa</h1>
+<h:messages/>
 <h:form>
-    <h:inputText id="id" value="#{ctrlRopa.ropa.id}"
-                 pt:placeholder="ID" />
-    <h:inputText id="nombre" value="#{ctrlRopa.ropa.nombre}"
-                 pt:placeholder="nombre" />
+    <h1>Alta de Ropa</h1>
+    <div>
+        <h:inputText id="id" value="#{ctrlRopa.ropa.id}"
+                     pt:placeholder="ID"/>
+        <div><h:message for="id" /></div>
+    </div>
+  <div>
+      <h:inputText id="nombre" value="#{ctrlRopa.ropa.nombre}"
+                   pt:placeholder="nombre" />
+      <div><h:message for="id" /></div>
+  </div>
+
     <h:commandButton action="#{ctrlRopa.crea()}" value="Alta" />
 </h:form>
 <h:body>

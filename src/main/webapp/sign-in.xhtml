@@ -72,6 +72,7 @@
             <body class="text-center"/>
 
             <main class="form-signin w-100 m-auto">
+                <h:messages/>
                 <h:form>
                     <img class="mb-4" src="imagenes/logo.jpeg" alt="" width="72" height="57"/>
                     <h1 class="h3 mb-3 fw-normal">Inicia Sesión</h1>
@@ -80,10 +81,12 @@
                         <h:inputText type="email" class="form-control" id="floatingInput" placeholder="nombre@example.com"
                                value="#{clienteCtrl.cliente.password}" required="true"/>
                         <label for="floatingInput">Correo Electronico</label>
+                        <div><h:message for="floatingInput" /></div>
                     </div>
                     <div class="form-floating">
                         <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña"/>
                         <label for="floatingPassword">Contraseña</label>
+                        <div><h:message for="floatingPassword" /></div>
                     </div>
 
                     <div class="checkbox mb-3">
