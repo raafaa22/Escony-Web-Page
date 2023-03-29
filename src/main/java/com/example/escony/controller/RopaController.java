@@ -22,11 +22,18 @@ import java.util.logging.Logger;
 public class RopaController implements Serializable{
 
     private Ropa ropa;
+    private Ropa ropaSeleccionada;
     @Inject
     private RopaDAO ropaDAO;
     private List<Ropa> ropaList;
     private final Logger logger = Logger.getLogger(RopaDAO.class.getName());
 
+    public void verDetalle(Ropa ropa) {
+        ropaSeleccionada = ropa;
+    }
+    public Ropa getRopaSeleccionada() {
+        return ropaSeleccionada;
+    }
 
     public RopaController() {
         this.ropaList = new ArrayList<>();
