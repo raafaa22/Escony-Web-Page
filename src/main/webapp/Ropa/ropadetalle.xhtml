@@ -32,16 +32,18 @@
 
 <h:body>
     <h1>Detalle del ropa</h1>
-<daw:ropa/>
+<daw:ropa value="#{ctrlRopa.ropa}"/>
+    <h:form>
     <div>
-            <b>Nombre:</b> #{ctrlRopa.ropaList.nombre}
+            <b>Nombre:</b> #{ctrlRopa.ropa.nombre}
         </div>
         <div>
-            <b>Precio: </b>#{ctrlRopa.ropaList.precio}
+            <b>Precio: </b>#{ctrlRopa.ropa.precio}
         </div>
          <div>
-        <b>Talla: </b>#{ctrlRopa.ropaList.talla}
+        <b>Talla: </b>#{ctrlRopa.ropa.talla}
          </div>
+    </h:form>
 
 </h:body>
 </ui:define>

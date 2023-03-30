@@ -8,7 +8,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
+
+import com.example.escony.model.dao.RopaDAOMap;
+import com.example.escony.qualifiers.DAOMap;
 import jakarta.annotation.PostConstruct;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.context.FacesContext;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
@@ -19,51 +24,19 @@ import java.util.logging.Logger;
 @ViewScoped
 
 
-public class RopaController implements Serializable{
+public class RopaController implements Serializable {
 
+    private final Logger logger = Logger.getLogger(RopaController.class.getName());
     private Ropa ropa;
-    private Ropa ropaSeleccionada;
     @Inject
-    private RopaDAO ropaDAO;
-    private List<Ropa> ropaList;
-    private final Logger logger = Logger.getLogger(RopaDAO.class.getName());
+    @DAOMap
+    private RopaDAOMap ropaDAO;
 
-    public void verDetalle(Ropa ropa) {
-        ropaSeleccionada = ropa;
-    }
-    public Ropa getRopaSeleccionada() {
-        return ropaSeleccionada;
-    }
-    public void reset() {
-        ropa.setId(null);
-    }
+    @Inject
+    FacesContext fc;
+
+
     public RopaController() {
-        this.ropaList = new ArrayList<>();
-    }
-
-    public void agregarRopa(Ropa ropa) {
-        ropaList.add(ropa);
-    }
-
-    public void actualizarRopa(int index, Ropa ropa) {
-        ropaList.set(index, ropa);
-    }
-
-    public void eliminarRopa(int index) {
-        ropaList.remove(index);
-    }
-
-    public List<Ropa> getRopaList() {
-        return ropaList;
-    }
-    public void recupera() {
-        logger.info("Recuperando articulo "+ropa.getId());
-        ropa = ropaDAO. buscaId( ropa.getId());
-    }
-    public String crea() {
-        ropa.setId(0);
-        ropaDAO.creaPrenda(ropa);
-        return "ropaalta?faces-redirect=true&id=" + ropa.getId();
     }
 
     @PostConstruct
@@ -71,13 +44,38 @@ public class RopaController implements Serializable{
         //init  model-view
         ropa = new Ropa();
     }
-    public List<Ropa> getRopaTodos() {
+
+    public List<Ropa> getRopaList() {
         return ropaDAO.buscaTodos();
     }
 
- public Ropa getRopa() {
+    public Ropa getRopa() {
         return ropa;
     }
+
+    public void recupera() {
+        ropa = ropaDAO.buscaId(ropa.getId());
+        if (ropa == null) {
+            fc.addMessage(null, new FacesMessage("La prenda indicada no existe"));
+        }
+    }
+
+    public String crea() {
+        ropa.setId(0);
+        ropaDAO.creaPrenda(ropa);
+        //Post-Redirect-Get
+        return "ropadetalle?faces-redirect=true&id=" + ropa.getId();
+    }
+    public String guarda(){
+        ropaDAO.guardaPrenda(ropa);
+        return "ropadetalle?faces-redirect=true&id=" + ropa.getId();
+    }
+
+    public String borra() {
+        ropaDAO.borraPrenda(ropa.getId());
+        return "listado";
+    }
 }
+
 
 

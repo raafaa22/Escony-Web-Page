@@ -35,21 +35,18 @@
 
 
                 <div class="form-floating">
-                    <h3>Email</h3>
-                    <h:inputText styleClass="form-control" label="Email" id="idEmail"
-                                                        value="#{clienteCtrl.cliente.email}" required="true">
-                    <!--f:validateLength minimum="4" maximum="25"/-->
-                </h:inputText>
-                    <p><h:message styleClass="form-text text-danger" for="idNombre"  /></p>
-                    <div><h:message for="idNombre" /></div>
+                    <h:inputText type="email" class="form-control" id="floatingInput" placeholder="nombre@example.com"
+                                 value="#{clienteCtrl.cliente.email}" required="true"/>
+                    <label for="floatingInput">Correo Electronico</label>
+                    <div><h:message for="floatingInput" /></div>
                 </div>
                 <div class="form-floating">
-                    <h3>Contraseña</h3>
-                    <h:inputText styleClass="form-control" label="Contraseña" id="idcontraseña"
-                                 value="#{clienteCtrl.cliente.password}" required="true">
-                    </h:inputText>
-                    <div><h:message for="idcontraseña" /></div>
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña"
+                           value="#{clienteCtrl.cliente.password}"/>
+                    <label for="floatingPassword">Contraseña</label>
+                    <div><h:message for="floatingPassword" /></div>
                 </div>
+
 
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Registrarse</button>
 
