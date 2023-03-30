@@ -34,7 +34,9 @@ public class RopaController implements Serializable{
     public Ropa getRopaSeleccionada() {
         return ropaSeleccionada;
     }
-
+    public void reset() {
+        ropa.setId(null);
+    }
     public RopaController() {
         this.ropaList = new ArrayList<>();
     }
@@ -77,3 +79,5 @@ public class RopaController implements Serializable{
         return ropa;
     }
 }
+
+

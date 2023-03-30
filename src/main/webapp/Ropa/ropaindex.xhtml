@@ -13,7 +13,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:h="jakarta.faces.html"
-      xmlns:ui="jakarta.faces.facelets">
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:f="jakarta.faces.core"
+      xmlns:daw="jakarta.faces.composite/daw">
 >
 
 <h:head>
@@ -23,11 +25,26 @@
 <h:body>
 
         <h1>Catálogo ropa</h1>
+    <h:form>
         <ul>
             <ui:repeat var="r" value="#{ctrlRopa.ropaList}">
-                <li><b>#{r.nombre}</b> #{r.precio}#{r.talla}</li>
+                <li><b><h:commandLink value="#{r.nombre}" action="#{ctrlRopa.recupera(r.nombre)}">
+                                      <f:ajax render="detalle" />
+                </h:commandLink>
+                </b>
+
+                    #{r.precio}#{r.talla}</li>
             </ui:repeat>
         </ul>
-</h:body>
+    </h:form>
+    <h:panelGroup id="detalle" layout="block">
+        <h:form rendered="#{not empty(ctrlRopa.ropa.id)}" >
+            <h3>Detalle de ropa</h3>
+            <daw:ropa value="#{ctrlRopa.ropa}" />
+            <h:commandButton value="Cerrar" action="#{ctrlRopa.resert()}" />
+        </h:form>
+    </h:panelGroup>
 
+
+</h:body>
 </html>

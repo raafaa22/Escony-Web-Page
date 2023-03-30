@@ -1,4 +1,20 @@
 <!DOCTYPE html>
 <html
-        xmlns:cc="jakarta.faces.composite" xmlns:h="jakarta.faces.html"
-        xmlns:f="jakarta.faces.core"></html>
+        xmlns:cc="jakarta.faces.composite"
+        xmlns:h="jakarta.faces.html"
+        xmlns:f="jakarta.faces.core">
+
+<cc:interface>
+    <cc:attribute name="value" />
+</cc:interface>
+<cc:implementation>
+    <article >
+        <div>
+            <b>ID:</b> #{cc.attrs.value.ID}
+        </div>
+        <div>
+            <b>Nombre: </b>#{cc.attrs.value.Nombre}
+        </div>
+    </article>
+</cc:implementation>
+</html>
