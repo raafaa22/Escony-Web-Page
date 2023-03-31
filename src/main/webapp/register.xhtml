@@ -35,13 +35,15 @@
 
                 <div class="form-floating">
                     <h:inputText type="email" class="form-control" id="floatingInput" placeholder="nombre@example.com"
-                                 value="#{clienteCtrl.cliente.email}" required="true"/>
+                                 value="#{clienteCtrl.cliente.email}" required="true"
+                                 requiredMessage="El email es obligatorio"/>
                     <label for="floatingInput">Correo Electronico</label>
                     <div><h:message for="floatingInput" /></div>
                 </div>
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña"
-                           value="#{clienteCtrl.cliente.password}"/>
+                    <h:inputSecret class="form-control" id="floatingPassword" placeholder="Contraseña"
+                           value="#{clienteCtrl.cliente.password}" required="true"
+                           requiredMessage="La contraseña es obligatoria"/>
                     <label for="floatingPassword">Contraseña</label>
                     <div><h:message for="floatingPassword" /></div>
                 </div>

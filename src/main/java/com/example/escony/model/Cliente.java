@@ -5,7 +5,9 @@ import jakarta.validation.constraints.Size;
 
 public class Cliente{
     private String email;
+    @Size(min=3,max=15, message="La longitud del nombre debe estar entre {min} y {max} caracteres")
     private String nombre;
+    @Size(min=8,max=20, message="La longitud de la contraseña debe de ser entre {min} y {max} caracteres")
     private String password;
     private String direccion;
     public Cliente(){
