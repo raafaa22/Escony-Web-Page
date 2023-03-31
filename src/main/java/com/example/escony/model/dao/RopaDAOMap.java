@@ -21,6 +21,7 @@ public class RopaDAOMap {
     public RopaDAOMap() {
             ropa = new HashMap<>();
             ropa.put(id, new Ropa("Camiseta","XXl",2.99,id++));
+            ropa.put(id, new Ropa("Pantalones anchos","M",15.99,id++));
     }
     public boolean creaPrenda(Ropa r) {
         Ropa nr=new Ropa(r);
