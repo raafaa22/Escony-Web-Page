@@ -1,7 +1,7 @@
 package com.example.escony.model;
 
 
-
+import jakarta.validation.constraints.Size;
 
 public class Cliente{
     private String email;

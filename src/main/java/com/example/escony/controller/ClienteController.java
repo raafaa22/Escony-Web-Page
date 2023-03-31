@@ -3,6 +3,8 @@ package com.example.escony.controller;
 import com.example.escony.model.Cliente;
 import com.example.escony.model.dao.ClienteDAO;
 
+import com.example.escony.model.dao.ClienteDAOMap;
+import com.example.escony.qualifiers.DAOMap;
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
@@ -23,8 +25,9 @@ public class ClienteController implements Serializable{
 
     //Business logic
     //@Inject @DAOJpa   //JPA DAO implementation
-    @Inject      //Inject DAO Map testing implementation
-    private ClienteDAO clienteDAO;
+    @Inject
+    @DAOMap//Inject DAO Map testing implementation
+    private ClienteDAOMap clienteDAO;
 
     @Inject
     FacesContext fc;
@@ -64,7 +67,7 @@ public class ClienteController implements Serializable{
      * Create a new Client from model data
      */
     public String crea() {
-        cliente.setEmail("");
+        cliente.setEmail(cliente.getEmail());
         clienteDAO.creaCliente(cliente);
         //Post-Redirect-Get
         return "visualiza?faces-redirect=true&id=" + cliente.getEmail();

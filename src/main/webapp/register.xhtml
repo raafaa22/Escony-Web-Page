@@ -18,21 +18,20 @@
                 <img class="mb-4" src="imagenes/logo.jpeg" alt="" width="72" height="57"/>
                 <h1 class="h3 mb-3 fw-normal">Regístrate</h1>
                 <div class="form-floating">
-                    <h3>Nombre</h3>
-                    <h:inputText styleClass="form-control" label="Nombre" id="idNombre"
-                                                        value="#{clienteCtrl.cliente.nombre}" required="true">
-                    </h:inputText>
-                    <div><h:message for="idNombre" /></div>
+                    <h:inputText class="form-control" id="Nombre" placeholder="Nombre"
+                                 value="#{clienteCtrl.cliente.nombre}" required="true"
+                                 requiredMessage="El nombre es obligatorio"/>
+                    <label for="floatingInput">Nombre</label>
+                    <div><h:message for="floatingInput" /></div>
                 </div>
 
                 <div class="form-floating">
-                    <h3>Direccion</h3>
-                    <h:inputText styleClass="form-control" label="Direccion" id="idDireccion"
-                                 value="#{clienteCtrl.cliente.direccion}" required="true">
-                    </h:inputText>
-                    <div><h:message for="idDireccion" /></div>
+                    <h:inputText class="form-control" id="Direccion" placeholder="Direccion"
+                                 value="#{clienteCtrl.cliente.direccion}" required="true"
+                                 requiredMessage="La direccion es obligatoria"/>
+                    <label for="floatingInput">Dirección</label>
+                    <div><h:message for="floatingInput" /></div>
                 </div>
-
 
                 <div class="form-floating">
                     <h:inputText type="email" class="form-control" id="floatingInput" placeholder="nombre@example.com"
@@ -48,7 +47,7 @@
                 </div>
 
 
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Registrarse</button>
+                <h:commandButton value="Registrarse" class="w-100 btn btn-lg btn-primary" action="#{clienteCtrl.creaCliente()}"/>
 
             </h:form>
         </main>
