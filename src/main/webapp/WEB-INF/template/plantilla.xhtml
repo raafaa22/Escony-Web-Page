@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="jakarta.faces.html"
       xmlns:f="http://java.sun.com/jsf/core"
-        xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets">
 
 
-
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"/>
+<h:head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"/>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content=""/>
@@ -18,11 +19,6 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/"/>
 
-
-
-
-
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
     <style>
         .bd-placeholder-img {
@@ -77,9 +73,10 @@
         }
     </style>
 
-
-</head>
+    <ui:insert name="metadata"/>
+</h:head>
 <h:body>
+
     <header>
         <div class="collapse bg-dark" id="navbarHeader">
             <div class="container">
@@ -94,18 +91,22 @@
         </div>
         <div class="navbar navbar-dark bg-dark shadow-sm">
             <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+
+                <h:link outcome="/index">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+                          aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a href="index.xhtml" class="navbar-brand d-flex align-items-center">
+                </h:link>
+                <h:link styleClass="navbar-brand d-flex align-items-center" outcome="/index">
                     <h:graphicImage width="50" height="50" library="imagenes" name="logo.jpeg"/>
                     <strong>ESCONY</strong>
-                </a>
+                </h:link>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
-                <a href="sign-in.xhtml" class="btn btn-primary my-2">Registrate/Inicia Sesión</a>
+                <h:link styleClass="btn btn-primary my-2" value="Registrate/Inicia Sesión" outcome="/sign-in"/>
             </div>
         </div>
     </header>

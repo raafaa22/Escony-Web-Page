@@ -13,38 +13,20 @@
         xmlns:p="jakarta.faces.passthrough"
         template="/WEB-INF/template/plantilla.xhtml"
         xmlns:daw="jakarta.faces.composite/daw">
-<ui:define name="metadata">
+    <ui:define name="metadata">
 
-    <title>Detalles</title>
+        <title>Detalles</title>
 
-   <f:metadata>
-        <f:viewParam name="id" required="true"
-                     value="#{ ctrlRopa.ropa.id }"/>
-        <f:viewAction action="#{ ctrlRopa.recupera() }"/>
-    </f:metadata>
-    <ui:repeat var="r" value="#{ctrlRopa.ropa}">
-        <li><b>#{r.id}</b> #{r.nombre}
-            <h:link value="Mostrar" outcome="detalle">
-                <f:param name="id" value="${r.id}"/>
-            </h:link>
-        </li>
-    </ui:repeat>
+        <f:metadata>
+            <f:viewParam name="id" required="true"
+                         value="#{ ctrlRopa.ropa.id }"/>
+            <f:viewAction action="#{ ctrlRopa.recupera() }"/>
+        </f:metadata>
+    </ui:define>
 
-<h:body>
-    <h1>Detalle del ropa</h1>
-<daw:ropa value="#{ctrlRopa.ropa}"/>
-    <h:form>
-    <div>
-            <b>Nombre:</b> #{ctrlRopa.ropa.nombre}
-        </div>
-        <div>
-            <b>Precio: </b>#{ctrlRopa.ropa.precio}
-        </div>
-         <div>
-        <b>Talla: </b>#{ctrlRopa.ropa.talla}
-         </div>
-    </h:form>
+       <ui:define name="contenido">
+            <h1>Detalle de la prenda</h1>
+            <daw:ropa value="#{ctrlRopa.ropa}"/>
+       </ui:define>
 
-</h:body>
-</ui:define>
 </ui:composition>

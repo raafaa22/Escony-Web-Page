@@ -30,7 +30,7 @@ public class RopaController implements Serializable {
     private Ropa ropa;
     @Inject
     @DAOMap
-    private RopaDAOMap ropaDAO;
+    private RopaDAO ropaDAO;
 
     @Inject
     FacesContext fc;
@@ -41,7 +41,6 @@ public class RopaController implements Serializable {
 
     @PostConstruct
     public void init() {
-        //init  model-view
         ropa = new Ropa();
     }
 
@@ -71,9 +70,9 @@ public class RopaController implements Serializable {
         return "ropadetalle?faces-redirect=true&id=" + ropa.getId();
     }
 
-    public String borra() {
-        ropaDAO.borraPrenda(ropa.getId());
-        return "listado";
+    public String borra(Ropa prenda) {
+        ropaDAO.borraPrenda(prenda.getId());
+        return "";
     }
 }
 

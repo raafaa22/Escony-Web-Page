@@ -11,7 +11,7 @@
         </f:metadata>
     </ui:define>
 
-    <ui:define name="content">
+    <ui:define name="contenido">
 
         <h1>Edita Ropa</h1>
 
@@ -20,7 +20,7 @@
         <ui:fragment  rendered="#{ctrlRopa.ropa != null}">
 
             <h:form styleClass="" id="formRopa">
-                <h3>ID: <h:outputText value="#{ctrlRopa.ropa.id}" /></h3><h:inputHidden value="#{ctrlRopa.ropa.id}"/>
+                <p>ID: <h:outputText value="#{ctrlRopa.ropa.id}" /></p><h:inputHidden value="#{ctrlRopa.ropa.id}"/>
                 <label>Nombre:</label> <h:inputText styleClass="form-control" label="Nombre" id="idNombre" value="#{ctrlRopa.ropa.nombre}"
                                                     required="true" />
                 <p><h:message styleClass="form-text text-danger" for="idNombre" /></p>
@@ -31,15 +31,15 @@
                 <label>Precio:</label> <h:inputText styleClass="form-control" label="precio" id="idPrecio" value="#{ctrlRopa.ropa.precio}"
                                                    required="true" />
                 <p><h:message styleClass="form-text text-danger" for="idPrecio" /></p>
-                <h:commandButton styleClass="btn btn-primary" value="Guardar" action="#{clienteCtrl.guarda()}"/>
-                <h:button styleClass="btn btn-cancel" value="Cancelar" outcome="listado" />
+                <h:commandButton styleClass="btn btn-primary" value="Guardar" action="#{ctrlRopa.guarda()}"/>
+                <h:button styleClass="btn btn-cancel" value="Cancelar" outcome="/listado_ropa" />
             </h:form>
         </ui:fragment>
     </ui:define>
 
     <ui:define name="left">
         <ul class="nav nav-pills flex-column">
-            <li class="nav-item"><h:link value="Volver" outcome="index" class="nav-link "/></li>
+            <li class="nav-item"><h:link value="Volver" outcome="/listado_ropa" class="nav-link "/></li>
         </ul>
     </ui:define>
 

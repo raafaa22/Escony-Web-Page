@@ -10,11 +10,20 @@
 <cc:implementation>
     <article >
         <div>
-            <b>ID:</b> #{cc.attrs.value.ID}
+            <b>ID:</b> #{cc.attrs.value.id}
         </div>
         <div>
-            <b>Nombre: </b>#{cc.attrs.value.Nombre}
+            <b>Nombre: </b>#{cc.attrs.value.nombre}
         </div>
+
+            <div>
+                <b>Precio: </b>#{ctrlRopa.ropa.precio}
+            </div>
+            <div>
+                <b>Talla: </b>#{ctrlRopa.ropa.talla}
+            </div>
+
+        <h:graphicImage library="imagenes" name="cc.attrs.value.imagen"/>
     </article>
 </cc:implementation>
 </html>

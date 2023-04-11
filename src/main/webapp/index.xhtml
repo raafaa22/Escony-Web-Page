@@ -22,15 +22,15 @@
          <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div class="my-3 py-3">
                <h2 class="display-5">Ropa de Mujer</h2>
-               <a class="btn btn-outline-secondary" href="mujer.xhtml">Comprar
+               <h:link class="btn btn-outline-secondary" value="Comprar" outcome="listado_ropa">
                   <nav>
 
                  </nav>
-               </a>
+               </h:link>
                <p class="lead">NUEVA TEMPORADA.</p>
             </div>
             <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
-               <img src="imagenes/index_mujer.jpg" height=""/>
+               <h:graphicImage width="" height="" library="imagenes" name="index_mujer.jpg"/>
             </div>
          </div>
 
@@ -38,14 +38,14 @@
          <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div class="my-3 p-3">
                <h2 class="display-5">Ropa de hombre</h2>
-               <h:link class="btn btn-outline-secondary" value="Comprar" outcome="hombre">
+               <h:link class="btn btn-outline-secondary" value="Comprar" outcome="listado_ropa">
                   <nav>
 
                   </nav>
                </h:link>
                <p class="lead">NUEVA TEMPORADA.</p>
                <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
-                  <img src="imagenes/index_hombre.webp" height=""/>
+                  <h:graphicImage width="" height="" library="imagenes" name="index_hombre.webp"/>
                </div>
             </div>
          </div>
@@ -59,7 +59,7 @@
             <p class="lead">Las mejores rebajas solo las encontraras aqui.</p>
 
          <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
-            <img src="imagenes/rebajas_mujer.jpg" width="600" height="450"/>
+            <h:graphicImage width="500" height="300" library="imagenes" name="rebajas_mujer.jpg"/>
          </div>
          </div>
       </div>
@@ -73,7 +73,7 @@
             <p class="lead">Las mejores rebajas solo las encontraras aqui.</p>
 
          <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
-            <img src="imagenes/rebajas_hombre.webp" width="600" height="400"/>
+            <h:graphicImage width="600" height="300" library="imagenes" name="rebajas_hombre.webp"/>
          </div>
          </div>
       </div>

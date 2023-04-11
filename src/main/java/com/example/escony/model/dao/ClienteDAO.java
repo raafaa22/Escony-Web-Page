@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 
-public interface ClienteDAO<Cliente,String> {
+public interface ClienteDAO{
     public Cliente buscaEmail(String email);
     public List<Cliente> buscaTodos();
     public int numLibros();

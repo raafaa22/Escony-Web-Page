@@ -27,7 +27,8 @@ public class ClienteController implements Serializable{
     //@Inject @DAOJpa   //JPA DAO implementation
     @Inject
     @DAOMap//Inject DAO Map testing implementation
-    private ClienteDAOMap clienteDAO;
+
+    private ClienteDAO clienteDAO;
 
     @Inject
     FacesContext fc;
@@ -97,7 +98,7 @@ public class ClienteController implements Serializable{
     //ACTIONS for listado.xhtml view
     public String borra(Cliente cliente) {
         clienteDAO.borraCliente(cliente.getEmail());
-        return "listado";
+        return "index";
     }
 
     //ACTIONS for listado_din.xhtml view

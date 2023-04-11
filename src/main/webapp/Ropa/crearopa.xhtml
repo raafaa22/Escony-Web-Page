@@ -1,0 +1,50 @@
+<ui:composition
+        xmlns:h="jakarta.faces.html"
+        xmlns:ui="jakarta.faces.facelets" xmlns:p="jakarta.faces.passthrough"
+        template="/WEB-INF/template/plantilla.xhtml"
+        xmlns:f="jakarta.faces.core">
+
+   <ui:define name="contenido">
+      <body class="text-center">
+
+      <main class="form-signin w-100 m-auto">
+      <h:messages/>
+      <h:form>
+         <h1 class="h3 mb-3 fw-normal">Crear Prenda</h1>
+         <div class="form-floating">
+            <h:inputText class="form-control" id="floatingInput" placeholder="Nombre"
+                         value="#{ctrlRopa.ropa.nombre}" required="true"
+                         requiredMessage="El nombre es obligatorio"/>
+            <label for="floatingInput">Nombre</label>
+            <div><h:message for="floatingInput"/></div>
+         </div>
+
+         <div class="form-floating">
+            <h:inputText class="form-control" id="Precio" placeholder="Precio"
+                         value="#{ctrlRopa.ropa.precio}" required="true"
+                         requiredMessage="El precio es obligatorio"/>
+            <label for="floatingInput">Precio</label>
+            <div><h:message for="floatingInput"/></div>
+         </div>
+
+         <div class="form-floating">
+            <h:inputText class="form-control" id="Talla" placeholder="Talla"
+                         value="#{ctrlRopa.ropa.talla}" required="true"
+                         requiredMessage="La talla es obligatoria"/>
+            <label for="floatingInput">Talla</label>
+            <div><h:message for="floatingInput"/></div>
+         </div>
+         <div class="form-floating">
+            <h:inputText class="form-control" id="IDropa" placeholder="ID"
+                         value="#{ctrlRopa.ropa.id}" required="true"
+                         requiredMessage="El ID es obligatorio"/>
+            <label for="floatingInput">ID</label>
+            <div><h:message for="floatingInput"/></div>
+         </div>
+         <h:commandButton value="Guardar" class="w-100 btn btn-lg btn-primary"
+                          action="#{ctrlRopa.guarda()}"/>
+      </h:form>
+      </main>
+      </body>
+   </ui:define>
+</ui:composition>
