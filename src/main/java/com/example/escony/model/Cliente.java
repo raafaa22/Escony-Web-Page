@@ -1,9 +1,12 @@
 package com.example.escony.model;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
-
+@Entity
 public class Cliente{
+    @Id
     private String email;
     @Size(min=3,max=15, message="La longitud del nombre debe estar entre {min} y {max} caracteres")
     private String nombre;

@@ -4,6 +4,7 @@ import com.example.escony.model.Cliente;
 import com.example.escony.model.dao.ClienteDAO;
 
 import com.example.escony.model.dao.ClienteDAOMap;
+import com.example.escony.qualifiers.DAOJPA;
 import com.example.escony.qualifiers.DAOMap;
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.application.FacesMessage;
@@ -19,6 +20,7 @@ import java.util.logging.Logger;
 @Named(value = "clienteCtrl")
 @ViewScoped
 public class ClienteController implements Serializable{
+
     private static final long serialVersionUID = 1L;
 
     private final Logger logger = Logger.getLogger(ClienteController.class.getName());

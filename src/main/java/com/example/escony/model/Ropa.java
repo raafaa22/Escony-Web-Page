@@ -1,9 +1,14 @@
 package com.example.escony.model;
 import com.example.escony.model.dao.RopaDAO;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Ropa{
     private String nombre;
     private String talla;
     private Double precio;
+    @Id
     private Integer id;
 
     public Ropa(String nombre, String talla, Double precio,Integer id) {
