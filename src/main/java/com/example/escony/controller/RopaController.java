@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import com.example.escony.model.dao.RopaDAOMap;
+import com.example.escony.qualifiers.DAOJPA;
 import com.example.escony.qualifiers.DAOMap;
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.application.FacesMessage;
@@ -29,6 +30,7 @@ public class RopaController implements Serializable {
     private Ropa ropa;
     @Inject
     @DAOMap
+   // @DAOJPA
     private RopaDAO ropaDAO;
 
     @Inject

@@ -29,7 +29,7 @@ public class ClienteController implements Serializable{
     //@Inject @DAOJpa   //JPA DAO implementation
     @Inject
     @DAOMap//Inject DAO Map testing implementation
-
+   // @DAOJPA
     private ClienteDAO clienteDAO;
 
     @Inject
