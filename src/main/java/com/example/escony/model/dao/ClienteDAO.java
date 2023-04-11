@@ -11,7 +11,6 @@ import java.util.stream.Collectors;
 public interface ClienteDAO{
     public Cliente buscaEmail(String email);
     public List<Cliente> buscaTodos();
-    public int numLibros();
     public boolean creaCliente(Cliente c);
     public boolean guardaCliente(Cliente c);
     public boolean borraCliente(String email);

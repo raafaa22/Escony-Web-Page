@@ -32,10 +32,6 @@ public class  ClienteDAOMap implements ClienteDAO, Serializable {
         return clientes.values().stream().collect(Collectors.toList());
     }
 @Override
-    public int numLibros() {
-        return clientes.size();
-    }
-@Override
     public boolean creaCliente(Cliente c) {
         Cliente nc = new Cliente(c);
         clientes.put(c.getEmail(), nc);

@@ -1,14 +1,15 @@
 package com.example.escony.model;
 import com.example.escony.model.dao.RopaDAO;
+import jakarta.inject.Inject;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-
+import java.sql.*;
 @Entity
 public class Ropa{
     private String nombre;
     private String talla;
     private Double precio;
-    @Id
+    @Inject @Id
     private Integer id;
 
     public Ropa(String nombre, String talla, Double precio,Integer id) {

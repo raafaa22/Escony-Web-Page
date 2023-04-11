@@ -6,7 +6,7 @@
 
     <!-- Define Persistence Unit -->
     <persistence-unit name="ropaPU" transaction-type="JTA">
-        <jta-data-source>java:global/jdbc/ropa</jta-data-source>
+        <jta-data-source>java:global/jdbc/gestRopa</jta-data-source>
         <properties>
             <property name="jakarta.persistence.schema-generation.database.action"
                       value="drop-and-create"/>
@@ -14,7 +14,7 @@
             <property name="eclipselink.logging.level" value="INFO"/>
             <property name="eclipselink.logging.parameters" value="true"/>
             <property name="eclipselink.logging.level.sql" value="FINE"/>
-            <property name="jakarta.persistence.sql-load-script-source" value="/META-INF/sql/sampledata.sql"/>
+            <property name="jakarta.persistence.sql-load-script-source" value="/META-INF/sql/datos.sql"/>
         </properties>
     </persistence-unit>
 </persistence>
