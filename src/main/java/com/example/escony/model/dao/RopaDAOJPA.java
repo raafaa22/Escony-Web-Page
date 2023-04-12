@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 public class RopaDAOJPA implements RopaDAO, Serializable {
     private final Logger logger = Logger.getLogger(ClienteDAOJPA.class.getName());
 
-    @PersistenceContext(unitName = "ropaPU") //Only for JEE full application servers
+    @PersistenceContext(unitName = "datos") //Only for JEE full application servers
     //Requires to enable Persistence-unit in persistence.xml
     private EntityManager em;
 

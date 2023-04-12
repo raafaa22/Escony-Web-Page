@@ -76,6 +76,7 @@ public class ClienteController implements Serializable{
         return "listado_clientes?faces-redirect=true&id=" + cliente.getEmail();
     }
 
+  
     /**
      * Update current model client to DAO
      */

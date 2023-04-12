@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 @Transactional
 public class ClienteDAOJPA implements ClienteDAO, Serializable {
     private final Logger logger = Logger.getLogger(ClienteDAOJPA.class.getName());
-
+    @PersistenceContext(unitName = "datos")
     private EntityManager em;
 
     public ClienteDAOJPA() {
