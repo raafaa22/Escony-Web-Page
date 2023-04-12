@@ -37,3 +37,8 @@
     margin-top: auto;
     cursor: pointer;
 }
+.crear-prenda-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}

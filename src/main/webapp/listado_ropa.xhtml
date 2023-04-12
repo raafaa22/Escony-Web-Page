@@ -12,7 +12,6 @@
         <link rel="stylesheet" type="text/css" href="css/listado.css"/>
     </head>
     <ui:define name="contenido">
-        <main>
             <h:form>
                 <div class="ropa-grid">
                     <ui:repeat value="#{ctrlRopa.ropaList}" var="ropa">
@@ -26,16 +25,15 @@
                             <h:link class="btn btn-primary" value="Editar" outcome="Ropa/ropaedita">
                                 <f:param name="id" value="#{ropa.id}"/>
                             </h:link>
-                            <h:commandButton styleClass="btn btn-secondary" value="Borra" action="#{ctrlRopa.borra(ropa)}"/>
+                            <h:commandButton styleClass="btn btn-secondary" value="Borra"
+                                             action="#{ctrlRopa.borra(ropa)}"/>
                         </div>
                     </ui:repeat>
                 </div>
             </h:form>
-            <div>
-            <h:link class="btn btn-primary" value="Crear Prenda" outcome="Ropa/crearopa"/>
+            <div class="crear-prenda-btn">
+                <h:link class="btn btn-primary" value="Crear Prenda" outcome="Ropa/crearopa"/>
             </div>
-        </main>
-
     </ui:define>
 </ui:composition>
 

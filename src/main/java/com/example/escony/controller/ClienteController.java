@@ -29,7 +29,7 @@ public class ClienteController implements Serializable{
     //@Inject @DAOJpa   //JPA DAO implementation
     @Inject
     @DAOMap//Inject DAO Map testing implementation
-   // @DAOJPA
+   //@DAOJPA
     private ClienteDAO clienteDAO;
 
     @Inject
@@ -73,7 +73,7 @@ public class ClienteController implements Serializable{
         cliente.setEmail(cliente.getEmail());
         clienteDAO.creaCliente(cliente);
         //Post-Redirect-Get
-        return "visualiza?faces-redirect=true&id=" + cliente.getEmail();
+        return "listado_clientes?faces-redirect=true&id=" + cliente.getEmail();
     }
 
     /**
@@ -86,7 +86,7 @@ public class ClienteController implements Serializable{
 //            return ""; //Stay on view to correct error
 //        }
         clienteDAO.guardaCliente(cliente);
-        return "visualiza?faces-redirect=true&id=" + cliente.getEmail();
+        return "listado_clientes?faces-redirect=true&id=" + cliente.getEmail();
     }
 
     /**
@@ -94,13 +94,13 @@ public class ClienteController implements Serializable{
      */
     public String borra() {
         clienteDAO.borraCliente(cliente.getEmail());
-        return "listado";
+        return "";
     }
 
     //ACTIONS for listado.xhtml view
     public String borra(Cliente cliente) {
         clienteDAO.borraCliente(cliente.getEmail());
-        return "index";
+        return "";
     }
 
     //ACTIONS for listado_din.xhtml view

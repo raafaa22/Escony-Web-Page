@@ -30,7 +30,7 @@ public class RopaController implements Serializable {
     private Ropa ropa;
     @Inject
     @DAOMap
-   // @DAOJPA
+   //@DAOJPA
     private RopaDAO ropaDAO;
 
     @Inject

@@ -12,9 +12,9 @@ import java.util.stream.Collectors;
 @DAOMap
 @ApplicationScoped
 public class  ClienteDAOMap implements ClienteDAO, Serializable {
-    private Map<String, Cliente> clientes;
+    private Map<String, Cliente> clientes=null;
 
-    public void ClienteDAOMap() {
+    public ClienteDAOMap() {
             clientes = new HashMap<>();
             clientes.put("rafa@email.com", new Cliente("Rafa", "Serrano", "Fuente del Pinillo", "rafa@email.com"));
             clientes.put("lydia@email.com", new Cliente("lydia", "Munoz", "Mi casa", "lydia@email.com"));
