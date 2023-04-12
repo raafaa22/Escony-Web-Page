@@ -61,7 +61,6 @@ public class RopaController implements Serializable {
     }
 
     public String crea() {
-        ropa.setId(0);
         ropaDAO.creaPrenda(ropa);
         //Post-Redirect-Get
         return "ropadetalle?faces-redirect=true&id=" + ropa.getId();

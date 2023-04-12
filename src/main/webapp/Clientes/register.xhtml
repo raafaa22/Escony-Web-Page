@@ -17,7 +17,7 @@
         <main class="form-signin w-100 m-auto">
             <h:messages/>
             <h:form>
-                <img class="mb-4" src="imagenes/logo.jpeg" alt="" width="72" height="57"/>
+                <img class="mb-4" src="../resources/imagenes/logo.jpeg" alt="" width="72" height="57"/>
                 <h1 class="h3 mb-3 fw-normal">Regístrate</h1>
                 <div class="form-floating">
                     <h:inputText class="form-control" id="Nombre" placeholder="Nombre"
@@ -50,7 +50,7 @@
                     <div><h:message for="floatingPassword"/></div>
                 </div>
                 <h:commandButton value="Registrarse" class="w-100 btn btn-lg btn-primary"
-                                 action="#{clienteCtrl.creaCliente()}"/>
+                                 action="#{clienteCtrl.crea}"/>
             </h:form>
         </main>
         </body>

@@ -49,9 +49,8 @@ public class RopaDAOMap implements RopaDAO, Serializable {
     @Override
     public boolean creaPrenda(Ropa r) {
         Ropa nr = new Ropa(r);
-        nr.setId(id);
-        ropa.put(id, nr);
-        id++;
+        nr.setId(r.getId());
+        ropa.put(r.getId(), nr);
         return true;
     }
 
