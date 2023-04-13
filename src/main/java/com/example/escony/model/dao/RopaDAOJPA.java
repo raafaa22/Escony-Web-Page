@@ -1,14 +1,21 @@
 package com.example.escony.model.dao;
 
 import com.example.escony.model.Ropa;
+import com.example.escony.qualifiers.DAOJPA;
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
+import jakarta.transaction.Transactional;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+@RequestScoped  //Elegible for Dependency Injection
+@DAOJPA
+@Transactional
 public class RopaDAOJPA implements RopaDAO, Serializable {
     private final Logger logger = Logger.getLogger(ClienteDAOJPA.class.getName());
 

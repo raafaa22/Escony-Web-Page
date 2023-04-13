@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="jakarta.faces.html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="jakarta.tags.core">
 
 
 <h:head>
@@ -107,6 +108,14 @@
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
                 <h:link styleClass="btn btn-primary my-2" value="Registrate/Inicia Sesión" outcome="/Clientes/sign-in"/>
+
+
+                    <c:if test="#{not empty request.remoteUser}">
+                        <h:form>
+                            <h:commandButton action="#{ctrlLibros.logout}" value="Logout #{request.remoteUser}" />
+                        </h:form>
+                    </c:if>
+
             </div>
         </div>
     </header>

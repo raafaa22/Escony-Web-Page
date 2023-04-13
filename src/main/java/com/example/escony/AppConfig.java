@@ -7,6 +7,8 @@ import jakarta.security.enterprise.authentication.mechanism.http.FormAuthenticat
 import jakarta.security.enterprise.authentication.mechanism.http.LoginToContinue;
 import jakarta.security.enterprise.identitystore.DatabaseIdentityStoreDefinition;
 import jakarta.security.enterprise.identitystore.Pbkdf2PasswordHash;
+import org.glassfish.soteria.identitystores.annotation.Credentials;
+import org.glassfish.soteria.identitystores.annotation.EmbeddedIdentityStoreDefinition;
 
 
 /** Configure App and JEE Security API
@@ -39,13 +41,13 @@ import jakarta.security.enterprise.identitystore.Pbkdf2PasswordHash;
 //        realmName = "Club de Tenis"
 //)
 /* Estandard form validation with j_security_check action*/
-@FormAuthenticationMechanismDefinition(
+/*@FormAuthenticationMechanismDefinition(
         loginToContinue = @LoginToContinue(
                 loginPage = "/login.jsf",
                 errorPage = "/login.jsf?error",
                 useForwardToLogin = false
         )
-)
+)*/
 /* Custom form validation for programatic autentication (see ClubLoginController.authenticate())*/
 //@CustomFormAuthenticationMechanismDefinition(
 //        loginToContinue = @LoginToContinue(
@@ -54,6 +56,18 @@ import jakarta.security.enterprise.identitystore.Pbkdf2PasswordHash;
 //                useForwardToLogin = false
 //        )
 //)
+@EmbeddedIdentityStoreDefinition({
+        @Credentials(callerName = "admin", password = "secret1", groups = {"ADMINISTRADORES"}),
+        @Credentials(callerName = "user", password = "secret2", groups = {"USUARIOS"})
+})
+@BasicAuthenticationMechanismDefinition( realmName = "Catálogo de ropa" )
+@FormAuthenticationMechanismDefinition(
+        loginToContinue = @LoginToContinue(
+                loginPage = "/login.xhtml",
+                errorPage = "/login.xhtml?error",
+                useForwardToLogin = false
+        )
+)
 @ApplicationScoped
 @FacesConfig //Required for using JSF 2.3 features
 public class AppConfig {

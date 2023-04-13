@@ -18,6 +18,8 @@ import jakarta.faces.context.FacesContext;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
 
 import java.util.logging.Logger;
 @Named("ctrlRopa")
@@ -25,6 +27,14 @@ import java.util.logging.Logger;
 
 
 public class RopaController implements Serializable {
+    @Inject
+    HttpServletRequest request; //acceso al objeto request de la petición actual
+    //...
+    public String logout() throws ServletException {
+        request.logout();
+        request.getSession().invalidate();
+        return "/index?faces-redirect=true"; //PRG
+    }
 
     private final Logger logger = Logger.getLogger(RopaController.class.getName());
     private Ropa ropa;
