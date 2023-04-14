@@ -63,8 +63,8 @@ import org.glassfish.soteria.identitystores.annotation.EmbeddedIdentityStoreDefi
 @BasicAuthenticationMechanismDefinition( realmName = "Catálogo de ropa" )
 @FormAuthenticationMechanismDefinition(
         loginToContinue = @LoginToContinue(
-                loginPage = "/sign-in.xhtml",
-                errorPage = "/sign-in.xhtml?error",
+                loginPage = "/login.xhtml",
+                errorPage = "/login.xhtml?error",
                 useForwardToLogin = false
         )
 )

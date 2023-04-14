@@ -43,6 +43,7 @@
             <web-resource-name> Usuarios identificados </web-resource-name>
             <url-pattern>/Ropa/*</url-pattern>
             <url-pattern>/Clientes/listado_clientes.xhtml</url-pattern>
+            <url-pattern>/controller/RopaController</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name> ADMINISTRADORES </role-name>

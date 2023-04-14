@@ -9,7 +9,7 @@ public class Ropa{
     private String nombre;
     private String talla;
     private Double precio;
-    @Inject @Id
+   @Id
     private Integer id;
 
     public Ropa(String nombre, String talla, Double precio,Integer id) {

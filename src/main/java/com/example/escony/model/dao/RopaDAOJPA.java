@@ -40,7 +40,7 @@ public class RopaDAOJPA implements RopaDAO, Serializable {
     public List<Ropa> buscaTodos() {
         List<Ropa> lc = null;
         try {
-            Query q = em.createQuery("Select c from Cliente c", Ropa.class);
+            Query q = em.createQuery("Select c from Ropa c", Ropa.class);
             lc = (List<Ropa>)q.getResultList();
         } catch (Exception ex) {
             logger.log(Level.SEVERE, ex.getMessage(), ex);
