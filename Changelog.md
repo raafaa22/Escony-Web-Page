@@ -1,4 +1,4 @@
-﻿# Iteración 0
+# Iteración 0
 
 ### Nuevo:
 - Storyboard
@@ -20,7 +20,6 @@
 - Changelog actualizado
 
 # Iteración 2
-
 ### Nuevo:
 - Qualifiers
 - Vistas de ropa detalle editar y listado
