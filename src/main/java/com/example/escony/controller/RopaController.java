@@ -39,8 +39,8 @@ public class RopaController implements Serializable {
     private final Logger logger = Logger.getLogger(RopaController.class.getName());
     private Ropa ropa;
     @Inject
-    @DAOMap
-   //@DAOJPA
+    //@DAOMap
+   @DAOJPA
     private RopaDAO ropaDAO;
 
     @Inject

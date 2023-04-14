@@ -58,13 +58,13 @@ import org.glassfish.soteria.identitystores.annotation.EmbeddedIdentityStoreDefi
 //)
 @EmbeddedIdentityStoreDefinition({
         @Credentials(callerName = "admin", password = "secret1", groups = {"ADMINISTRADORES"}),
-        @Credentials(callerName = "user", password = "secret2", groups = {"USUARIOS"})
+                @Credentials(callerName = "user", password = "secret2", groups = {"USUARIOS"})
 })
 @BasicAuthenticationMechanismDefinition( realmName = "Catálogo de ropa" )
 @FormAuthenticationMechanismDefinition(
         loginToContinue = @LoginToContinue(
-                loginPage = "/login.xhtml",
-                errorPage = "/login.xhtml?error",
+                loginPage = "/sign-in.xhtml",
+                errorPage = "/sign-in.xhtml?error",
                 useForwardToLogin = false
         )
 )
