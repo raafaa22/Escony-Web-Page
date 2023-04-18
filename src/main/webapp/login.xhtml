@@ -3,15 +3,30 @@
         xmlns:h="jakarta.faces.html"
         template="./WEB-INF/template/plantilla.xhtml">
    <ui:define name="contenido">
-      <h2>Identificación de usuario </h2>
-      <h:panelGroup rendered="#{param.error!=null}">
-         <p class="alert alert-danger">Error de autenticación</p>
-      </h:panelGroup>
-      <form action="j_security_check" method="POST">
-         <label>Usuario</label><input class="form-control" type="text" name="j_username"/>
-         <label>Clave</label><input class="form-control" type="password" name="j_password"/>
-         <input class="btn btn-primary" type="submit" value="Identificarse"/>
-      </form>
+      <h:body>
+      <body class="text-center"/>
+      <main class="form-signin w-100 m-auto">
+      <h:form >
+         <h:graphicImage alt="" width="72" height="57" styleClass="mb-4" library="imagenes" name="logo.jpeg"/>
+         <h1 class="h3 mb-3 fw-normal">Inicia Sesión</h1>
+         <div class="form-floating">
+         <h:inputText value="#{usuLoginCtrl.email}"  class="form-control" id="floatingInput"/>
+            <label for="floatingInput">Usuario</label>
+         </div>
+         <div class="form-floating">
+         <h:inputSecret value="#{usuLoginCtrl.password}"  class="form-control" id="floatingPassword"/>
+            <label for="floatingPassword">Clave</label>
+         <h:commandLink class="btn btn-primary" value="Identificarse" action="#{usuLoginCtrl.login()}"/>
+         </div>
+         <div class="checkbox mb-3">
+            <label>
+               <input type="checkbox" value="remember-me"/> Recordar
+               <a href="register.xhtml">¿No tienes cuenta? Regístrate</a>
+            </label>
+         </div>
+      </h:form>
+      </main>
+      </h:body>
    </ui:define>
 
 </ui:composition>
