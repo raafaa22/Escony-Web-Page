@@ -107,14 +107,13 @@
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
+                <c:if test="#{not empty request.userPrincipal}">
+                    <li style="float:right"><h:link styleClass="nav-item btn btn-warning" outcome="/logout">Logout #{request.userPrincipal.name}</h:link>
+                    </li>
+                </c:if>
                 <h:link styleClass="btn btn-primary my-2" value="Registrate/Inicia Sesión" outcome="/login"/>
 
 
-                    <c:if test="#{not empty request.remoteUser}">
-                        <h:form>
-                            <h:commandButton action="#{ctrlRopa.logout}" value="Logout #{request.remoteUser}" />
-                        </h:form>
-                    </c:if>
 
             </div>
         </div>

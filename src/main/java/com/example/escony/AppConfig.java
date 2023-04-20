@@ -13,7 +13,7 @@ import org.glassfish.soteria.identitystores.annotation.EmbeddedIdentityStoreDefi
 
 /** Configure App and JEE Security API
  *
- * @author jrbalsas
+ * @author lydia
  */
 /*
     SELECT some IdentityStore implementations
