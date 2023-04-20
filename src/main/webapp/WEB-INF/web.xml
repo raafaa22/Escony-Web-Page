@@ -38,7 +38,7 @@
         <role-name>ADMINISTRADORES</role-name>
     </security-role>
     <!-- Reglas de control de acceso: security-constraint, puede haber varias -->
-    <!--security-constraint>
+    <security-constraint>
         <web-resource-collection>
             <web-resource-name> Usuarios identificados </web-resource-name>
             <url-pattern>/Ropa/*</url-pattern>
@@ -47,7 +47,7 @@
         <auth-constraint>
             <role-name> ADMINISTRADORES </role-name>
         </auth-constraint>
-    </security-constraint-->
+    </security-constraint>
 
     <security-constraint>
         <web-resource-collection>
