@@ -30,13 +30,7 @@ public class RopaController implements Serializable {
     @Inject
     HttpServletRequest request; //acceso al objeto request de la petición actual
     //...
-    public String logout() throws ServletException {
-        request.logout();
-        request.getSession().invalidate();
-        return "/index?faces-redirect=true"; //PRG
-    }
 
-    private final Logger logger = Logger.getLogger(RopaController.class.getName());
     private Ropa ropa;
     @Inject
     //@DAOMap
@@ -82,7 +76,7 @@ public class RopaController implements Serializable {
 
     public String borra(Ropa prenda) {
         ropaDAO.borraPrenda(prenda.getId());
-        return "";
+        return "/listado_ropa";
     }
 }
 

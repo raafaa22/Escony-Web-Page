@@ -34,7 +34,7 @@
                 <h:commandButton styleClass="btn btn-primary" value="Guardar" action="#{ctrlRopa.guarda()}"/>
                 <h:button styleClass="btn btn-cancel" value="Cancelar" outcome="/listado_ropa" />
                 <h:commandButton styleClass="btn btn-secondary" value="Borra"
-                                 action="#{ctrlRopa.borra(ropa)}"/>
+                                 action="#{ctrlRopa.borra(ctrlRopa.ropa)}"/>
             </h:form>
         </ui:fragment>
     </ui:define>

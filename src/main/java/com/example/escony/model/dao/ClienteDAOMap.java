@@ -16,11 +16,11 @@ public class  ClienteDAOMap implements ClienteDAO, Serializable {
 
     public ClienteDAOMap() {
             clientes = new HashMap<>();
-            clientes.put("rafa@email.com", new Cliente("Rafa", "Serrano", "Fuente del Pinillo", "rafa@email.com"));
-            clientes.put("lydia@email.com", new Cliente("lydia", "Munoz", "Mi casa", "lydia@email.com"));
-            clientes.put("erre@email.com", new Cliente("alvaro", "Herre", "Arjona", "erre@email.com"));
-            clientes.put("chiviri@email.com", new Cliente("eden", "sierra", "pueblo", "chiviri@email.com"));
-            clientes.put("gusilu@email.com", new Cliente("elena", "carmon", "Museo", "gusilu@email.com"));
+            clientes.put("rafa@email.com", new Cliente("Rafa", "Serrano", "Fuente del Pinillo", "rafa@email.com","ADMINISTRADOR"));
+            clientes.put("lydia@email.com", new Cliente("lydia", "Munoz", "Mi casa", "lydia@email.com","ADMINISTRADOR"));
+            clientes.put("erre@email.com", new Cliente("alvaro", "Herre", "Arjona", "erre@email.com","USUARIO"));
+            clientes.put("chiviri@email.com", new Cliente("eden", "sierra", "pueblo", "chiviri@email.com","USUARIO"));
+            clientes.put("gusilu@email.com", new Cliente("elena", "carmon", "Museo", "gusilu@email.com","USUARIO"));
 
     }
 @Override

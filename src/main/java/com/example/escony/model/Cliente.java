@@ -13,15 +13,21 @@ public class Cliente{
     @Size(min=8,max=20, message="La longitud de la contraseña debe de ser entre {min} y {max} caracteres")
     private String password;
     private String direccion;
+    private String rol;
     public Cliente(){
-
+        email= "";
+        nombre="";
+        password="";
+        direccion="";
+        rol="";
     }
 
-    public Cliente(String nombre,String password,String direccion,String email){
+    public Cliente(String nombre,String password,String direccion,String email,String rol){
         this.nombre=nombre;
         this.direccion=direccion;
         this.email=email;
         this.password=password;
+        this.rol=rol;
     }
 
     public Cliente(Cliente cliente) {
@@ -29,6 +35,7 @@ public class Cliente{
         this.email=cliente.email;
         this.password=cliente.password;
         this.direccion=cliente.direccion;
+        this.rol=cliente.rol;
     }
 
     public String getNombre() {
@@ -61,5 +68,13 @@ public class Cliente{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.escony;
 
+import com.example.escony.qualifiers.DAOJPA;
 import jakarta.enterprise.context.ApplicationScoped;
 
 import jakarta.security.enterprise.identitystore.IdentityStore;
@@ -24,11 +25,11 @@ import java.util.Arrays;
 @ApplicationScoped
 
 public class RopaIdentityStore  implements IdentityStore {
-    private Map<String,String> credenciales; //ejemplo de almacén de credenciales
+    @Inject
+    @DAOJPA
+    ClienteDAO clientedao;
     public RopaIdentityStore() {
-        credenciales = new HashMap<>();
-        credenciales.put("usuario1", "clave1");
-        credenciales.put("usuario2", "clave2");
+
     }
 
     public CredentialValidationResult validate (
@@ -36,11 +37,12 @@ public class RopaIdentityStore  implements IdentityStore {
 //Recuperar credenciales proporcionadas por el servidor
         String username = usernamePasswordCredential.getCaller();
         String password = usernamePasswordCredential.getPasswordAsString();
+        Cliente cliente=clientedao.buscaEmail(username);
+
 //Ejemplo simple de verificación de credenciales
-        String validPassword = credenciales.get(username);
-        if (validPassword != null && validPassword.equals(password)) {
+        if (cliente!=null && cliente.getPassword().equals(password)) {
 //Autenticación completada, obtener los roles del usuario...
-            Set<String> roles = new HashSet<>(Arrays.asList("USUARIOS"));
+            Set<String> roles = new HashSet<>(Arrays.asList(cliente.getRol()));
 //Pasar datos del usuario al servidor
             return new CredentialValidationResult(username, roles);
         }

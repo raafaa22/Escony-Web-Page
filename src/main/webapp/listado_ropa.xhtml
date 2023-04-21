@@ -2,7 +2,7 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="jakarta.faces.html"
                 xmlns:ui="jakarta.faces.facelets"
-                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core"
                 template="/WEB-INF/template/plantilla.xhtml">
 
     <ui:define name="contenido">
@@ -16,16 +16,20 @@
                             <h:link class="btn btn-primary" value="Ver mas" outcome="Ropa/ropadetalle">
                                 <f:param name="id" value="#{ropa.id}"/>
                             </h:link>
-                            <h:link class="btn btn-primary" value="Editar" outcome="Ropa/ropaedita">
+                            <c:if test="#{not empty request.userPrincipal}">
+                            <h:link class="btn btn-secondary" value="Editar" outcome="Ropa/ropaedita">
                                 <f:param name="id" value="#{ropa.id}"/>
                             </h:link>
+                            </c:if>
                         </div>
                     </ui:repeat>
                 </div>
             </h:form>
+        <c:if test="#{not empty request.userPrincipal}">
             <div class="crear-prenda-btn">
-                <h:link class="btn btn-primary" value="Crear Prenda" outcome="Ropa/crearopa"/>
+                <h:link class="btn btn-outline-success" value="Crear Prenda" outcome="Ropa/crearopa" />
             </div>
+        </c:if>
     </ui:define>
 </ui:composition>
 
