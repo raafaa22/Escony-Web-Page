@@ -21,6 +21,10 @@
                                 <f:param name="id" value="#{ropa.id}"/>
                             </h:link>
                             </c:if>
+                            <c:if test="#{not empty request.userPrincipal and request.isUserInRole('USUARIO')}">
+                            <h:commandButton styleClass="btn btn-secondary" value="Añadir Carrito"
+                                             action="#{ctrlRopa.anadeCarrito(ropa)}"/>
+                            </c:if>
                         </div>
                     </ui:repeat>
                 </div>
