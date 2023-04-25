@@ -1,5 +1,6 @@
 package com.example.escony.model.dao;
 
+import com.example.escony.model.Carrito;
 import com.example.escony.model.Ropa;
 import com.example.escony.qualifiers.DAOJPA;
 import jakarta.enterprise.context.RequestScoped;
@@ -22,6 +23,7 @@ public class RopaDAOJPA implements RopaDAO, Serializable {
     @PersistenceContext(unitName = "datos") //Only for JEE full application servers
     //Requires to enable Persistence-unit in persistence.xml
     private EntityManager em;
+    private Carrito carrito;
 
     public RopaDAOJPA() {
     }
@@ -88,4 +90,11 @@ public class RopaDAOJPA implements RopaDAO, Serializable {
         }
         return borrado;
     }
+    @Override
+    public boolean anadeCarrito(Ropa r){
+        boolean anadido=false;
+
+        return anadido;
+    }
+
 }

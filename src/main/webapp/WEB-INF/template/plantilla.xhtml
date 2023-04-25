@@ -98,8 +98,10 @@
                           aria-controls="navbarHead er" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                    <h:link styleClass="btn btn-secondary" value="Carrito" outcome="/carrito"/>
                 </h:link>
+                    <c:if test="#{not empty request.userPrincipal and request.isUserInRole('USUARIO')}">
+                    <h:link styleClass="btn btn-secondary" value="Carrito" outcome="/carrito"/>
+                    </c:if>
                 <h:link styleClass="navbar-brand d-flex align-items-center" outcome="/index">
                     <h:graphicImage width="50" height="50" library="imagenes" name="logo.jpeg"/>
                     <strong>ESCONY</strong>

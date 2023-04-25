@@ -69,6 +69,9 @@ public class RopaDAOMap implements RopaDAO, Serializable {
         }
         return result;
     }
+    public boolean anadeCarrito(Ropa r){
+        return false;
+    }
 
 
 }

@@ -1,49 +1,41 @@
 package com.example.escony.model;
 
 
-import java.util.ArrayList;
-import java.util.List;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+@Entity
 public class Carrito {
-    private List<Ropa> prendas;
-    private double precioTotal;
-    private int cantidad;
+    @Id
+    private Integer id_prenda;
+    @Id
+    private String email_usu;
 
     // Constructor sin parámetros
     public Carrito() {
-        this.prendas = new ArrayList<>();
-        this.precioTotal = 0;
-        this.cantidad = 0;
+        id_prenda=0;
+        email_usu="";
     }
 
     // Constructor con parámetros
-    public Carrito(List<Ropa> prendas, Double precioTotal, Integer cantidad) {
-        this.prendas = prendas;
-        this.precioTotal = precioTotal;
-        this.cantidad = cantidad;
+    public Carrito(Integer id_prenda,String email_usu) {
+        this.id_prenda=id_prenda;
+        this.email_usu=email_usu;
     }
 
-    public List<Ropa> getPrendas() {
-        return prendas;
+    public String getEmail_usu() {
+        return email_usu;
     }
 
-    public void setPrendas(List<Ropa> prendas) {
-        this.prendas = prendas;
+    public void setEmail_usu(String email_usu) {
+        this.email_usu = email_usu;
     }
 
-    public double getPrecioTotal() {
-        return precioTotal;
+    public Integer getId_prenda() {
+        return id_prenda;
     }
 
-    public void setPrecioTotal(double precioTotal) {
-        this.precioTotal = precioTotal;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setId_prenda(Integer id_prenda) {
+        this.id_prenda = id_prenda;
     }
 }
