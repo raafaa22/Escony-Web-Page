@@ -92,6 +92,18 @@ public class CarritoDAOJPA implements CarritoDAO, Serializable {
     @Override
     public boolean creaCarrito(Carrito c) {
         boolean creado = false;
+        int i=0;
+        boolean hayEspacio=false;
+        while(i<100 || !hayEspacio){
+            if(em.find(Carrito.class,c.getIdCarrito()+i)==null){
+                hayEspacio=true;
+                int idc=c.getIdCarrito()+i;
+                c.setIdCarrito(idc);
+                i=100;
+            }else {
+                i++;
+            }
+        }
         try {
             em.persist(c);
             creado = true;
