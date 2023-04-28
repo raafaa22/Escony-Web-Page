@@ -4,38 +4,48 @@ package com.example.escony.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+
 @Entity
 public class Carrito {
     @Id
-    private Integer id_prenda;
-    @Id
-    private String email_usu;
+    int idCarrito;
+    int idRopa;
+    String email;
 
-    // Constructor sin parámetros
+
     public Carrito() {
-        id_prenda=0;
-        email_usu="";
+        idRopa=0;
+        idCarrito=0;
+        email="";
     }
 
-    // Constructor con parámetros
-    public Carrito(Integer id_prenda,String email_usu) {
-        this.id_prenda=id_prenda;
-        this.email_usu=email_usu;
+    public Carrito(int idCarrito,int idRopa,String email) {
+        this.idRopa=idRopa;
+        this.email=email;
+        this.idCarrito=idCarrito;
     }
 
-    public String getEmail_usu() {
-        return email_usu;
+    public int getIdRopa() {
+        return idRopa;
     }
 
-    public void setEmail_usu(String email_usu) {
-        this.email_usu = email_usu;
+    public void setIdRopa(int idRopa) {
+        this.idRopa = idRopa;
     }
 
-    public Integer getId_prenda() {
-        return id_prenda;
+    public int getIdCarrito() {
+        return idCarrito;
     }
 
-    public void setId_prenda(Integer id_prenda) {
-        this.id_prenda = id_prenda;
+    public void setIdCarrito(int idCarrito) {
+        this.idCarrito = idCarrito;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

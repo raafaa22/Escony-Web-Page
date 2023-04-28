@@ -6,6 +6,7 @@
                 template="/WEB-INF/template/plantilla.xhtml">
 
     <ui:define name="contenido">
+
             <h:form>
                 <div class="ropa-grid">
                     <ui:repeat value="#{ctrlRopa.ropaList}" var="ropa">
@@ -22,8 +23,8 @@
                             </h:link>
                             </c:if>
                             <c:if test="#{not empty request.userPrincipal and request.isUserInRole('USUARIO')}">
-                            <h:commandButton styleClass="btn btn-secondary" value="Añadir Carrito"
-                                             action="#{ctrlRopa.anadeCarrito(ropa)}"/>
+                                <c:set var="emailusu" value="#{request.userPrincipal.name}"/>
+                            <h:commandButton styleClass="btn btn-secondary" value="Añadir Carrito" action="#{ctrlCarrito.crea(emailusu,ropa.id)}"/>
                             </c:if>
                         </div>
                     </ui:repeat>

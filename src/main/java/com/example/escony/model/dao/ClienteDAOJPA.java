@@ -1,5 +1,7 @@
 package com.example.escony.model.dao;
 
+import com.example.escony.model.Carrito;
+import com.example.escony.model.Ropa;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -86,4 +88,5 @@ public class ClienteDAOJPA implements ClienteDAO, Serializable {
         }
         return borrado;
     }
+
 }

@@ -78,10 +78,7 @@ public class RopaController implements Serializable {
         ropaDAO.borraPrenda(prenda.getId());
         return "/listado_ropa";
     }
-    public String anadeCarrito(Ropa prenda){
-        ropaDAO.anadeCarrito(prenda);
-        return "";
-    }
+
 }
 
 

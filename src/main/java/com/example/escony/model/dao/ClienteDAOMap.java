@@ -1,6 +1,7 @@
 package com.example.escony.model.dao;
 
 import com.example.escony.model.Cliente;
+import com.example.escony.model.Ropa;
 import com.example.escony.qualifiers.DAOMap;
 import jakarta.enterprise.context.ApplicationScoped;
 
@@ -57,6 +58,8 @@ public class  ClienteDAOMap implements ClienteDAO, Serializable {
         }
         return result;
     }
+
+
 }
 
 

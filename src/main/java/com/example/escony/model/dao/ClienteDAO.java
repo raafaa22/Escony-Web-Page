@@ -1,5 +1,6 @@
 package com.example.escony.model.dao;
 import com.example.escony.model.Cliente;
+import com.example.escony.model.Ropa;
 import jakarta.enterprise.context.ApplicationScoped;
 
 import java.util.HashMap;

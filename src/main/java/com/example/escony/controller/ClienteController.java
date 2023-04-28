@@ -1,6 +1,8 @@
 package com.example.escony.controller;
 
+import com.example.escony.model.Carrito;
 import com.example.escony.model.Cliente;
+import com.example.escony.model.Ropa;
 import com.example.escony.model.dao.ClienteDAO;
 
 import com.example.escony.model.dao.ClienteDAOMap;
@@ -21,16 +23,11 @@ import java.util.logging.Logger;
 @ViewScoped
 public class ClienteController implements Serializable{
 
-    private static final long serialVersionUID = 1L;
-
-    private final Logger logger = Logger.getLogger(ClienteController.class.getName());
-
-    //Business logic
-    //@Inject @DAOJpa   //JPA DAO implementation
     @Inject
-    //@DAOMap//Inject DAO Map testing implementation
+    //@DAOMap
    @DAOJPA
     private ClienteDAO clienteDAO;
+
 
     @Inject
     FacesContext fc;
@@ -71,6 +68,7 @@ public class ClienteController implements Serializable{
      */
     public String crea() {
         cliente.setEmail(cliente.getEmail());
+        cliente.setRol("USUARIO");
         clienteDAO.creaCliente(cliente);
         //Post-Redirect-Get
         return "listado_clientes?faces-redirect=true&id=" + cliente.getEmail();
