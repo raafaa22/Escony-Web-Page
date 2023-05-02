@@ -26,9 +26,6 @@
                         </label>
                     </div>
                 </h:form>
-                <c:if test="#{not empty request.userPrincipal and request.isUserInRole('ADMINISTRADOR')}">
-                <h:link styleClass="btn btn-secondary" value="Ver Clientes" outcome="/Clientes/listado_clientes"/>
-                </c:if>
             </main>
         </h:body>
     </ui:define>

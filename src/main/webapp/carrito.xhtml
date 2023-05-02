@@ -9,6 +9,7 @@
         xmlns:daw="jakarta.faces.composite/daw">
     <ui:define name="contenido">
         <c:set var="emailusu" value="#{request.userPrincipal.name}" scope="request"/>
+        <h:form>
         <ui:repeat value="#{ctrlCarrito.getPrendasCliente(emailusu)}" var="ropa">
             <div class="ropa-item">
             <h4>#{ropa.nombre}</h4>
@@ -17,8 +18,9 @@
             <h:link class="btn btn-primary" value="Ver mas" outcome="Ropa/ropadetalle">
                 <f:param name="id" value="#{ropa.id}"/>
             </h:link>
+                <h:commandButton styleClass="btn btn-secondary" value="Quitar" action="#{ctrlCarrito.borra(ropa.id,emailusu)}"/>
             </div>
-<!--Faltaría un boton para borrar prendas del carrito-->
         </ui:repeat>
+        </h:form>
     </ui:define>
 </ui:composition>

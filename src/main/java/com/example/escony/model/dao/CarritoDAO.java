@@ -8,6 +8,7 @@ import java.util.List;
 public interface CarritoDAO {
     public List<Ropa> buscaPorEmail(String email);
     public List<Carrito> buscaPorIdPrenda(int id);
+    public Carrito buscaPorPrendaEmail(int idP,String email);
     public boolean borraCarrito(int id);
     public boolean guardaCarrito(Carrito c);
     public boolean creaCarrito(Carrito c);

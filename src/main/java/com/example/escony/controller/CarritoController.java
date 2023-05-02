@@ -71,9 +71,10 @@ public class CarritoController implements Serializable {
         return "ropadetalle?faces-redirect=true&id=" + carrito.getIdCarrito();
     }
 
-    public String borra(Carrito car) {
-        carritoDAO.borraCarrito(car.getIdRopa());
-        return "/listado_ropa";
+    public String borra(int idP,String email) {
+        Carrito borrar=carritoDAO.buscaPorPrendaEmail(idP,email);
+            carritoDAO.borraCarrito(borrar.getIdCarrito());
+        return "";
     }
 
 

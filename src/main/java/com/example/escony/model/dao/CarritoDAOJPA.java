@@ -52,6 +52,19 @@ public class CarritoDAOJPA implements CarritoDAO, Serializable {
         }
         return lc;
     }
+    public Carrito buscaPorPrendaEmail(int idP,String email) {
+        Carrito carrito=null;
+        try {
+            Query q=em.createQuery("SELECT c FROM Carrito c WHERE c.email = :email AND c.idRopa = :idRopa AND c.idCarrito = (SELECT MIN(c2.idCarrito) FROM Carrito c2 WHERE c2.email = :email AND c2.idRopa = :idRopa)",Carrito.class);
+            q.setParameter("idRopa",idP);
+            q.setParameter("email",email);
+            carrito=(Carrito) q.getSingleResult();
+        } catch (Exception ex) {
+            logger.log(Level.SEVERE, ex.getMessage(), ex);
+
+        }
+        return carrito;
+    }
     @Override
     public List<Carrito> buscaTodos() {
         List<Carrito> lc=null;
