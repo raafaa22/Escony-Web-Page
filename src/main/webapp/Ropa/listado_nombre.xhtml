@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:f="jakarta.faces.core" xmlns:c="http://java.sun.com/jsp/jstl/core"
+                template="/WEB-INF/template/plantilla.xhtml">
+   <ui:define name="metadata">
+      <title>Detalles</title>
+
+      <f:metadata>
+         <f:viewParam name="nombre" required="true"
+                      value="#{ctrlRopa.nombre}"/>
+      </f:metadata>
+   </ui:define>
+
+   <ui:define name="contenido">
+      <h:form>
+         <div class="ropa-grid">
+            <ui:repeat value="#{ctrlRopa.buscaPorNombre(ctrlRopa.nombre)}" var="ropa">
+               <div class="ropa-item">
+                  <h4>#{ropa.nombre}</h4>
+                  <b class="precio">#{ropa.precio} €</b>
+                  <p>#{ropa.talla}</p>
+                  <h:link class="btn btn-primary" value="Ver mas" outcome="ropadetalle">
+                     <f:param name="id" value="#{ropa.id}"/>
+                  </h:link>
+                  <c:if test="#{not empty request.userPrincipal and request.isUserInRole('ADMINISTRADOR')}">
+                     <h:link class="btn btn-secondary" value="Editar" outcome="ropaedita">
+                        <f:param name="id" value="#{ropa.id}"/>
+                     </h:link>
+                  </c:if>
+                  <c:if test="#{not empty request.userPrincipal and request.isUserInRole('USUARIO')}">
+                     <c:set var="emailusu" value="#{request.userPrincipal.name}"/>
+                     <h:commandButton styleClass="btn btn-secondary" value="Añadir Carrito" action="#{ctrlCarrito.crea(emailusu,ropa.id)}"/>
+                  </c:if>
+               </div>
+            </ui:repeat>
+         </div>
+      </h:form>
+   </ui:define>
+</ui:composition>

@@ -88,5 +88,18 @@ public class RopaDAOJPA implements RopaDAO, Serializable {
         return borrado;
     }
 
+    @Override
+    public List<Ropa> buscaPorNombre(String nombre){
+        List<Ropa> lr=null;
+        try {
+            Query q= em.createQuery("SELECT r FROM Ropa r WHERE r.nombre LIKE :nombre",Ropa.class);
+            q.setParameter("nombre", "%" + nombre + "%");
+            lr=(List<Ropa>) q.getResultList();
+        }catch (Exception ex) {
+        logger.log(Level.SEVERE, ex.getMessage(), ex);
+        }
+        return lr;
+}
+
 
 }

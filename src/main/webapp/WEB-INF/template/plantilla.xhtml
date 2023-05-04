@@ -106,10 +106,13 @@
                     <h:graphicImage width="50" height="50" library="imagenes" name="logo.jpeg"/>
                     <strong>ESCONY</strong>
                 </h:link>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
+                <h:form styleClass="d-flex">
+
+                    <h:inputText styleClass="form-control me-2" value="#{ctrlRopa.nombre}"/>
+                    <h:link styleClass="btn btn-outline-success" value="Buscar" outcome="/Ropa/listado_nombre">
+                        <f:param name="nombre" value="#{not empty ctrlRopa.nombre ? ctrlRopa.nombre : ''}"/>
+                    </h:link>
+                </h:form>
                 <c:if test="#{not empty request.userPrincipal}">
                     <li style="float:right"><h:link styleClass="nav-item btn btn-warning" outcome="/logout">Logout #{request.userPrincipal.name}</h:link>
                     </li>

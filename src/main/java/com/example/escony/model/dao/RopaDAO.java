@@ -14,6 +14,7 @@ public interface RopaDAO{
 
     public List<Ropa> buscaTodos();
     public boolean guardaPrenda(Ropa r);
+    public List<Ropa> buscaPorNombre(String nombre);
 
 }
 

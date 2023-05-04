@@ -31,6 +31,7 @@ public class RopaController implements Serializable {
     HttpServletRequest request; //acceso al objeto request de la petición actual
     //...
 
+    String nombre;
     private Ropa ropa;
     @Inject
     //@DAOMap
@@ -78,7 +79,17 @@ public class RopaController implements Serializable {
         ropaDAO.borraPrenda(prenda.getId());
         return "/listado_ropa";
     }
+    public List<Ropa> buscaPorNombre(String nombre){
+        return ropaDAO.buscaPorNombre(nombre);
+    }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
 }
 
 

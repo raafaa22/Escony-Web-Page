@@ -72,6 +72,9 @@ public class RopaDAOMap implements RopaDAO, Serializable {
     public boolean anadeCarrito(Ropa r){
         return false;
     }
+    public List<Ropa> buscaPorNombre(String nombre){
+        return null;
+    }
 
 
 }
