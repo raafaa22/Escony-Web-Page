@@ -1,57 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:h="jakarta.faces.html"
-                xmlns:ui="jakarta.faces.facelets"
-                xmlns:f="http://java.sun.com/jsf/core"
+<ui:composition xmlns:ui="jakarta.faces.facelets"
                 template="/WEB-INF/template/plantilla.xhtml">
     <head>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
               crossorigin="anonymous"/>
+
         <title>Escony</title>
+        <script defer="" src="#{request.contextPath}/JS/ctrlRegistro.js"></script>
     </head>
+
     <ui:define name="contenido">
 
         <body class="text-center">
 
         <main class="form-signin w-100 m-auto">
-            <h:messages/>
-            <h:form>
+            <div id="errores"><!-- Mensajes de error --></div>
+
+            <form id="fAlta" method="GET" action="">
+
                 <img class="mb-4" src="../resources/imagenes/logo.jpeg" alt="" width="72" height="57"/>
                 <h1 class="h3 mb-3 fw-normal">Regístrate</h1>
+
                 <div class="form-floating">
-                    <h:inputText class="form-control" id="Nombre" placeholder="Nombre"
-                                 value="#{clienteCtrl.cliente.nombre}" required="true"
-                                 requiredMessage="El nombre es obligatorio"/>
+                    <input name="idNombre" type="text" class="form-control" id="Nombre" placeholder="Nombre"/>
                     <label for="floatingInput">Nombre</label>
-                    <div><h:message for="floatingInput"/></div>
                 </div>
 
                 <div class="form-floating">
-                    <h:inputText class="form-control" id="Direccion" placeholder="Direccion"
-                                 value="#{clienteCtrl.cliente.direccion}" required="true"
-                                 requiredMessage="La direccion es obligatoria"/>
+                    <input type="text" class="form-control" id="Direccion" placeholder="Direccion"
+                                 />
                     <label for="floatingInput">Dirección</label>
-                    <div><h:message for="floatingInput"/></div>
+
                 </div>
 
                 <div class="form-floating">
-                    <h:inputText type="email" class="form-control" id="floatingInput" placeholder="nombre@example.com"
-                                 value="#{clienteCtrl.cliente.email}" required="true"
-                                 requiredMessage="El email es obligatorio"/>
+                    <input name="idEmail" type="text" class="form-control" id="floatingInput" placeholder="nombre@example.com"/>
                     <label for="floatingInput">Correo Electronico</label>
-                    <div><h:message for="floatingInput"/></div>
                 </div>
                 <div class="form-floating">
-                    <h:inputSecret class="form-control" id="floatingPassword" placeholder="Contraseña"
-                                   value="#{clienteCtrl.cliente.password}" required="true"
-                                   requiredMessage="La contraseña es obligatoria"/>
+                    <input name="idContrasena" type="password" class="form-control" id="floatingPassword" placeholder="Contraseña"
+                                  />
                     <label for="floatingPassword">Contraseña</label>
-                    <div><h:message for="floatingPassword"/></div>
                 </div>
-                <h:commandButton value="Registrarse" class="w-100 btn btn-lg btn-primary"
-                                 action="#{clienteCtrl.crea}"/>
-            </h:form>
+
+                <input name="Enviar" class="btn btn-primary"
+                                 type="submit" value="Registrarse"/>
+                <input name="Enviar" class="btn btn-secondary"
+                       type="reset" value="Limpiar"/>
+            </form>
+
         </main>
         </body>
     </ui:define>

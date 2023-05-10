@@ -8,15 +8,16 @@
       <title>Detalles</title>
 
       <f:metadata>
-         <f:viewParam name="nombre" required="true"
+         <f:viewParam name="Nombre" required="true"
                       value="#{ctrlRopa.nombre}"/>
+
       </f:metadata>
    </ui:define>
 
    <ui:define name="contenido">
       <h:form>
          <div class="ropa-grid">
-            <ui:repeat value="#{ctrlRopa.buscaPorNombre(ctrlRopa.nombre)}" var="ropa">
+            <ui:repeat value="#{ctrlRopa.encontrados}" var="ropa">
                <div class="ropa-item">
                   <h4>#{ropa.nombre}</h4>
                   <b class="precio">#{ropa.precio} €</b>
