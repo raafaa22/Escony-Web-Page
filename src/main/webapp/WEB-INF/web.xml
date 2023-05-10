@@ -15,7 +15,7 @@
     <data-source>
         <name>java:global/jdbc/gestRopa</name> <!-- JNDI resource -->
         <class-name>org.h2.jdbcx.JdbcDataSource</class-name> <!-- Driver -->
-        <url>jdbc:h2:~/h2db/dawropa;AUTO_SERVER=TRUE</url> <!--DB in user folder -->
+        <url>jdbc:h2:~/h2db/dawropa;MODE=LEGACY;AUTO_SERVER=TRUE</url> <!--DB in user folder -->
         <user>dawuser</user>
         <password>dawuser</password>
         <initial-pool-size>2</initial-pool-size>
