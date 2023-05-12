@@ -7,9 +7,8 @@
               crossorigin="anonymous"/>
 
         <title>Escony</title>
-        <script type="text/javascript" defer src="${request.contextPath}/js/ctrlRegistro.js"></script>
-        <script src=""></script>
-    </head>
+    </ui:define>
+
 
     <ui:define name="contenido">
 
@@ -18,7 +17,7 @@
         <main class="form-signin w-100 m-auto">
             <div id="errores"><!-- Mensajes de error --></div>
 
-            <form id="fAlta" method="POST" action="">
+            <form id="fAlta" method="POST" action="" onsubmit="validarDatos()">
 
                 <img class="mb-4" src="../resources/imagenes/logo.jpeg" alt="" width="72" height="57"/>
                 <h1 class="h3 mb-3 fw-normal">Regístrate</h1>
@@ -29,8 +28,7 @@
                 </div>
 
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="Direccion" placeholder="Direccion"
-                                 />
+                    <input type="text" class="form-control" id="Direccion" placeholder="Direccion"/>
                     <label for="floatingInput">Dirección</label>
 
                 </div>

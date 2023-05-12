@@ -3,23 +3,45 @@ document.addEventListener('DOMContentLoaded',function () {
 
     class ctrlRegistro {
         constructor() {
-            this.srvUrl = "/Cliente";
+            this.srvUrl = "/api/Cliente";
             //view-model
             this.usuarios = [];
         }
 
         init() {
-            el('#fAlta').addEventListener('submit', event => {
-                this.alta(event);
-            });
             this.cargaUsuarios();
         }
 
+        cargaUsuarios() {
+            return fetch( this.srvUrl )
+                .then(response => response.json()) //Promise resolve handler
+                .then( usuarios => { //Promise resolve handler
+                    this.usuarios=usuarios;
+                    this.visualizaUsuarios();
+                    return true;
+                })
+                .catch(() => { //Network error
+                    el('#errores').innerHTML="Error en conexión";
+                    console.error("Error en conexión");
+                    return false;
+                });
+        }
+        visualizaUsuarios() {
+            let ul = el('#lista');
+            ul.innerHTML = '';
+            this.usuarios.forEach(usuarios => {
+                let li = document.createElement('li');
+                li.innerHTML = `<b>${usuarios.email}</b> ${usuarios.contrasena}`;
+                ul.appendChild(li);
+            });
+        }
+
+
         validarDatos(event) {
             event.preventDefault(); //stop form submit
-            let nombre = el('#fCliente\\:idNombre').value;
-            let email = el('#fCliente\\:idEmail').value;
-            let contrasena = el('#fCliente\\:idContrasena').value();
+            var nombre = el('#fCliente\\:idNombre').value;
+            var email = el('#fCliente\\:idEmail').value;
+            var contrasena = el('#fCliente\\:idContrasena').value;
             var valido = true;
 
             if (nombre.length < 3 || nombre.length > 15) {
@@ -58,6 +80,5 @@ document.addEventListener('DOMContentLoaded',function () {
         console.log('Inicializando Inicio Sesion');
         ctrl.init();
     });
-
-})
+    })
 

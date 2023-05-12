@@ -3,19 +3,21 @@ package com.example.escony;
 import com.example.escony.model.Cliente;
 import com.example.escony.model.dao.ClienteDAO;
 import com.example.escony.qualifiers.DAOMap;
-import jakarta.enterprise.context.RequestScoped;
+
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-import java.util.ArrayList;
+
+import jakarta.enterprise.context.RequestScoped;
 import java.util.List;
 
 @Path("/Cliente") //Acceso /api/libros
 @Produces(MediaType.APPLICATION_JSON)
 @RequestScoped //Ojo, jakarta.enterprise.context.RequestScoped
+
 
 public class UsuariosResource {
     @Inject
