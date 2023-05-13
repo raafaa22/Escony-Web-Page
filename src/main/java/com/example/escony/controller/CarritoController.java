@@ -44,7 +44,7 @@ public class CarritoController implements Serializable {
     public List<Ropa> getPrendasCliente(String email) {
         return carritoDAO.buscaPorEmail(email);
     }
-    public List<Carrito> getClientesPrenda(int idPrenda){
+    public List<Carrito> getCarritosPrenda(int idPrenda){
         return carritoDAO.buscaPorIdPrenda(idPrenda);
     }
 

@@ -22,6 +22,7 @@
         <max-pool-size>10</max-pool-size>
         <min-pool-size>5</min-pool-size>
     </data-source>
+
     <session-config>
         <session-timeout> 30 </session-timeout> <!-- tiempo de inactividad -->
         <cookie-config>

@@ -5,30 +5,24 @@ import jakarta.enterprise.context.ApplicationScoped;
 
 import jakarta.security.enterprise.identitystore.IdentityStore;
 import com.example.escony.model.Cliente;
-import com.example.escony.model.Ropa;
 import com.example.escony.model.dao.ClienteDAO;
-import com.example.escony.qualifiers.DAOMap;
+
 import java.util.Set;
-import java.util.logging.Logger;
-import jakarta.enterprise.context.ApplicationScoped;
+
 import jakarta.inject.Inject;
 import jakarta.security.enterprise.credential.UsernamePasswordCredential;
 import jakarta.security.enterprise.identitystore.CredentialValidationResult;
 import static jakarta.security.enterprise.identitystore.CredentialValidationResult.INVALID_RESULT;
-import jakarta.security.enterprise.identitystore.IdentityStore;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.HashSet;
 import java.util.Arrays;
 @ApplicationScoped
 
-public class RopaIdentityStore  implements IdentityStore {
+public class UsuariosIdentityStore implements IdentityStore {
     @Inject
     @DAOJPA
     ClienteDAO clientedao;
-    public RopaIdentityStore() {
+    public UsuariosIdentityStore() {
 
     }
 

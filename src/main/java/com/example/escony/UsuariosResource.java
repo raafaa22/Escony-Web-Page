@@ -14,7 +14,7 @@ import jakarta.ws.rs.core.Response;
 import jakarta.enterprise.context.RequestScoped;
 import java.util.List;
 
-@Path("/Cliente") //Acceso /api/libros
+@Path("/Clientes") //Acceso /api/libros
 @Produces(MediaType.APPLICATION_JSON)
 @RequestScoped //Ojo, jakarta.enterprise.context.RequestScoped
 

@@ -1,39 +1,19 @@
-document.addEventListener('DOMContentLoaded',function () {
     let el = selector => document.querySelector(selector);
 
     class ctrlRegistro {
         constructor() {
-            this.srvUrl = "/api/Cliente";
+            this.srvUrl = "api/Clientes";
             //view-model
             this.usuarios = [];
+            this.modoEdicion = false;
         }
 
         init() {
-            this.cargaUsuarios();
-        }
-
-        cargaUsuarios() {
-            return fetch( this.srvUrl )
-                .then(response => response.json()) //Promise resolve handler
-                .then( usuarios => { //Promise resolve handler
-                    this.usuarios=usuarios;
-                    this.visualizaUsuarios();
-                    return true;
-                })
-                .catch(() => { //Network error
-                    el('#errores').innerHTML="Error en conexión";
-                    console.error("Error en conexión");
-                    return false;
+            $(this.config.formulario)
+                .on('submit', event => {
+                    return this.validarDatos()
                 });
-        }
-        visualizaUsuarios() {
-            let ul = el('#lista');
-            ul.innerHTML = '';
-            this.usuarios.forEach(usuarios => {
-                let li = document.createElement('li');
-                li.innerHTML = `<b>${usuarios.email}</b> ${usuarios.contrasena}`;
-                ul.appendChild(li);
-            });
+            $(this.config.ibEmail).focus();
         }
 
 
@@ -80,5 +60,5 @@ document.addEventListener('DOMContentLoaded',function () {
         console.log('Inicializando Inicio Sesion');
         ctrl.init();
     });
-    })
+
 
