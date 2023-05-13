@@ -56,3 +56,13 @@
 ### Corregido
 
 - Changelog con nombres de quien lo ha hecho (rafa)
+- # Iteración 5
+### Nuevo:
+
+- ClientesValidationExceptionManager, JAXRSConfiguration, UsuariosRESTService, ctrlUsuario, CtrlRegistro (Lydia)
+- main.js (rafa)
+- Formulario registro (Lydia)
+
+### Corregido
+
+- Añadido "MODE=LEGACY;AUTO_SERVER=TRUE"(Lydia)
