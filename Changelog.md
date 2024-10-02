@@ -55,7 +55,7 @@
 
 ### Corregido
 
-- Changelog con nombres de quien lo ha hecho (rafa)
+- Changelog con nombres de quien lo ha hecho (Rafa)
 - # Iteración 5
 ### Nuevo:
 
@@ -65,4 +65,4 @@
 
 ### Corregido
 
-- Añadido "MODE=LEGACY;AUTO_SERVER=TRUE"(Lydia)
+- Añadido "MODE=LEGACY;AUTO_SERVER=TRUE" (Lydia)
